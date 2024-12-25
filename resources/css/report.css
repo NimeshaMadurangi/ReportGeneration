@@ -1,0 +1,42 @@
+.report-container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.report-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.export-button {
+    display: block;
+    margin: 10px auto 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.lottery-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.lottery-item {
+    width: 300px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.lottery-logo {
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
