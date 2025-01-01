@@ -39,6 +39,6 @@ Route::middleware('auth')->group(function () {
 Route::get('/upload', fn() => inertia('Upload'))->name('upload');
 Route::post('/upload', [LotteryController::class, 'upload'])->name('upload.file');
 Route::get('/report', [LotteryController::class, 'report'])->name('report');
-
+Route::get('/report1', [LotteryController::class, 'report1'])->name('report1');
 
 require __DIR__.'/auth.php';
