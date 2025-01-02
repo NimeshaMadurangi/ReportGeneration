@@ -1,0 +1,142 @@
+/* Container styling */
+.lagna-ticket-container {
+  width: 100%;
+  max-width: 60rem;
+  height: 15rem;
+  margin: 0 auto; /* Center the ticket */
+  background-color: black; /* Black background for the ticket */
+  border-radius: 0.5rem; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Winning Numbers Section */
+.lagna-ticket-winning-numbers {
+  text-align: center;
+  margin-bottom: 1.5rem; /* Space below the winning numbers */
+}
+
+.lagna-ticket-winning-numbers-title {
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.lagna-ticket-winning-numbers-container {
+  display: flex;
+  justify-content: right;
+  gap: 1rem; /* Space between numbers */
+}
+
+.lagna-ticket-winning-number {
+  width: 3rem;
+  height: 3rem;
+  background-color: #ffffff; /* White background for numbers */
+  border-radius: 0.375rem; /* Slight rounding */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+/* Header Section */
+.lagna-ticket-header {
+  display: flex;
+  /* align-items: center;
+  justify-content: space-between; */
+  margin-bottom: 1.5rem; /* Space below header */
+}
+
+/* Logo Section */
+.lagna-ticket-logo-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.lagna-ticket-logo {
+  height: 15rem; /* Adjust logo height */
+  width: auto; /* Maintain aspect ratio */
+}
+
+/* Draw Number Section */
+.lagna-ticket-draw-number-container {
+  flex: 1; /* Take up equal space */
+  text-align: center;
+  margin-top: 1rem;
+  margin-right: 5rem;
+}
+
+.lagna-ticket-draw-number {
+  background-color: #eceef1;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+}
+
+.lagna-ticket-draw-number-text {
+  color: #2d3748; /* Dark gray */
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Color Section */
+.lagna-ticket-colour-container {
+  flex: 1;
+  margin: 0 1rem; /* Add spacing on the sides */
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.lagna-ticket-color {
+  background-color: #f0f0f1;
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+}
+
+.lagna-ticket-colour-text {
+  color: #2d3748; /* Dark gray */
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.lagna-ticket-colour-green {
+  color: #38a169; /* Green text for "Green" */
+  font-weight: bold;
+}
+
+/* Bottom Section */
+.lagna-ticket-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+/* Next Jackpot */
+.lagna-ticket-next-jackpot {
+  background-color: #2d3748; /* Dark background */
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem; /* Rounded corners */
+  font-size: 0.875rem; /* Smaller text */
+}
+
+/* Special Prize Section */
+.lagna-ticket-special-prize-container {
+  display: flex;
+  align-items: center;
+  background-color: #2d3748; /* Dark background */
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem; /* Rounded corners */
+}
+
+.lagna-ticket-special-prize-icon {
+  height: 2rem; /* Adjust size */
+  width: 2rem;
+  margin-right: 0.5rem; /* Space between icon and text */
+}
+
+/* Additional Styling */
+body {
+  background-color: #121212; /* Dark background for the whole app */
+  color: white; /* White text by default */
+  font-family: 'Arial', sans-serif; /* Clean font */
+}
