@@ -24,7 +24,7 @@ const LagnaWasanaTicket = () => {
             
               <div className="lagna-ticket-color">
                 <div className="lagna-ticket-colour-text">
-                  Colour ▶ <span className="lagna-ticket-colour-green">Green</span>
+                  Colour ▶ 
                 </div>
               </div>
               <div className="lagna-ticket-winning-numbers">
@@ -35,37 +35,27 @@ const LagnaWasanaTicket = () => {
               ))}
             </div>
             </div>
+            
+            <div className="lagna-ticket-special">
+              <div className="lagna-ticket-bottom">
+              {/* Jackpot Section */}
+                <div className="lagna-ticket-next-jackpot">
+                  Next Super Jackpot : Rs.
+                </div>
+              </div>
+              {/* Special Prize Section */}
+              <div className="lagna-ticket-special-prize-container">
+                <img
+                  src="/images/sc.png"
+                  alt="Special Prize"
+                  className="lagna-ticket-special-prize-icon"
+                />
+                Special number for <br /> Rs. 50,000/- cash prize             
             </div>
-          </div>
-
-        {/* Winning Numbers Section */}
-        {/* <div className="lagna-ticket-winning-numbers">
-          <div className="lagna-ticket-winning-numbers-title">Winning Numbers</div>
-          <div className="lagna-ticket-winning-numbers-container">
-            {[...Array(5)].map((_, index) => (
-              <div key={index} className="lagna-ticket-winning-number" />
-            ))}
-          </div>
-        </div> */}
-
-        {/* Bottom Section */}
-        <div className="lagna-ticket-bottom">
-          {/* Next Jackpot */}
-          <div className="lagna-ticket-next-jackpot">
-            Next Super Jackpot : Rs.
-          </div>
-
-          {/* Special Prize */}
-          <div className="lagna-ticket-special-prize-container">
-            <img
-              src="/images/special-prize.png"
-              alt="Special Prize"
-              className="lagna-ticket-special-prize-icon"
-            />
-            <div>Special number for Rs. 50,000/- cash prize</div>
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
