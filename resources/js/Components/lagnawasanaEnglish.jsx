@@ -64,7 +64,9 @@ const LagnaWasanaEnglish = ({ name = "Lagna Wasanawa" }) => {
                 {balls.length > 0
                   ? balls.map((ball, index) => (
                       <div key={index} className="lagna-ticket-winning-number">
-                        {ball}
+                        <div className="lagna-ticket-winning-number-text">
+                          {ball}
+                        </div>
                       </div>
                     ))
                   : "Loading..."}
