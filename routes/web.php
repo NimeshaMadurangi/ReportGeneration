@@ -41,6 +41,8 @@ Route::get('/upload', fn() => inertia('Upload'))->name('upload');
 Route::post('/upload', [LotteryController::class, 'upload'])->name('upload.file');
 Route::get('/report', [LotteryController::class, 'report'])->name('report');
 
+Route::get('/api/lottery', [LotteryController::class, 'getLottery']);
+
 
 Route::get('/test', [TestController::class, 'test']);
 

@@ -16,15 +16,15 @@ const LagnaWasanaSinhala = () => {
           <div className="lagna-ticket-draw-number-container">
             <div className="lagna-ticket-draw-number">
               <div className="lagna-ticket-draw-number-text">
-                Draw Number ▶ 12345
+              දිනුම් වාරය ▶ 12345
               </div>
             </div>
             <div className="lagna-ticket-color">
-              <div className="lagna-ticket-colour-text">Colour ▶ green</div>
+              <div className="lagna-ticket-colour-text">වර්ණය ▶ කොළ </div>
             </div>
             <div className="lagna-ticket-winning-numbers">
               <div className="lagna-ticket-winning-numbers-title">
-                Winning Numbers
+              ජයග්‍රාහී අංක
               </div>
               <div className="lagna-ticket-winning-numbers-container">
                 {[...Array(5)].map((_, index) => (
@@ -35,7 +35,7 @@ const LagnaWasanaSinhala = () => {
             <div className="lagna-ticket-special">
               <div className="lagna-ticket-bottom">
                 <div className="lagna-ticket-next-jackpot">
-                  Next Super Jackpot : Rs.
+                මීළඟ සුපිරි ජයමල්ල රු.
                 </div>
               </div>
               <div className="lagna-ticket-special-prize-container">
@@ -45,7 +45,7 @@ const LagnaWasanaSinhala = () => {
                   className="lagna-ticket-special-prize-icon"
                 />
                 <div>
-                  Special number for <br /> Rs. 50,000/- cash prize
+                රු. 50,000/= සඳහා <br/> විශේෂ අංකය
                 </div>
               </div>
             </div>
