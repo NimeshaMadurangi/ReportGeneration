@@ -1,7 +1,7 @@
 import React from "react";
 import "../../css/lagna.css";
 
-const LagnaWasanaTicket = () => {
+const LagnaWasanaTamil = () => {
   return (
     <div className="lagna-ticket-container">
       <div className="lagna-ticket-card">
@@ -13,25 +13,27 @@ const LagnaWasanaTicket = () => {
               className="lagna-ticket-logo"
             />
           </div>
+
+          
           <div className="lagna-ticket-draw-number-container">
-            <div className="lagna-ticket-draw-number">
-              <div className="lagna-ticket-draw-number-text">
-                Draw Number ▶ 12345
+              <div className="lagna-ticket-draw-number">
+                <div className="lagna-ticket-draw-number-text">Draw Number ▶ 12345</div>
               </div>
-            </div>
-            <div className="lagna-ticket-color">
-              <div className="lagna-ticket-colour-text">Colour ▶ green</div>
-            </div>
+            
+              <div className="lagna-ticket-color">
+                <div className="lagna-ticket-colour-text">
+                  Colour ▶ green
+                </div>
+              </div>
             <div className="lagna-ticket-winning-numbers">
-              <div className="lagna-ticket-winning-numbers-title">
-                Winning Numbers
-              </div>
+              <div className="lagna-ticket-winning-numbers-title">Winning Numbers</div>
               <div className="lagna-ticket-winning-numbers-container">
                 {[...Array(5)].map((_, index) => (
                   <div key={index} className="lagna-ticket-winning-number" />
                 ))}
               </div>
             </div>
+            
             <div className="lagna-ticket-special">
               <div className="lagna-ticket-bottom">
                 <div className="lagna-ticket-next-jackpot">
@@ -44,9 +46,7 @@ const LagnaWasanaTicket = () => {
                   alt="Special Prize"
                   className="lagna-ticket-special-prize-icon"
                 />
-                <div>
-                  Special number for <br /> Rs. 50,000/- cash prize
-                </div>
+                  Special number for <br /> Rs. 50,000/- cash prize             
               </div>
             </div>
           </div>
@@ -56,4 +56,4 @@ const LagnaWasanaTicket = () => {
   );
 };
 
-export default LagnaWasanaTicket;
+export default LagnaWasanaTamil;

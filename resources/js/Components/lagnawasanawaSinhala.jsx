@@ -1,7 +1,7 @@
 import React from "react";
 import "../../css/lagna.css";
 
-const LagnaWasanaTicket = () => {
+const LagnaWasanaSinhala = () => {
   return (
     <div className="lagna-ticket-container">
       <div className="lagna-ticket-card">
@@ -56,4 +56,4 @@ const LagnaWasanaTicket = () => {
   );
 };
 
-export default LagnaWasanaTicket;
+export default LagnaWasanaSinhala;
