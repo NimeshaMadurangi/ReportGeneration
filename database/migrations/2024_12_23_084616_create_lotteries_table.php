@@ -26,6 +26,8 @@ return new class extends Migration
             $table->string('ball4')->nullable(); // Ball 4
             $table->string('ball5')->nullable(); // Ball 5
             $table->string('ball6')->nullable(); // Ball 6
+            $table->string('ball7')->nullable(); // Ball 7
+            $table->date('next_date')->nullable();
             $table->timestamps();
         });
     }

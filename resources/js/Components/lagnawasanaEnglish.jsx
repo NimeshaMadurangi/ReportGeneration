@@ -3,7 +3,7 @@ import axios from "axios";
 import "../../css/lagna.css";
 
 const LagnaWasanaEnglish = ({ name = "Lagna Wasanawa" }) => {
-  // State for lottery data
+
   const [lottery, setLottery] = useState({
     number: null,
     color: null,
@@ -20,7 +20,7 @@ const LagnaWasanaEnglish = ({ name = "Lagna Wasanawa" }) => {
     const fetchLottery = async () => {
       try {
         const response = await axios.get(`/api/lottery`, { params: { name } });
-        setLottery(response.data); // Update state with fetched data
+        setLottery(response.data);
       } catch (error) {
         console.error("Error fetching lottery data:", error);
       }

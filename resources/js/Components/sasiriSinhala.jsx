@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../../css/sasiri.css";
 
-const SasiriEnglish = ({ name = "Sasiri" }) => {
+const SasiriSinhala = ({ name = "Sasiri" }) => {
   const [lottery, setLottery] = useState({
     number: null,
     color: null,
@@ -54,7 +54,7 @@ const SasiriEnglish = ({ name = "Sasiri" }) => {
             </div>
             <div className="sasiri-ticket-winning-numbers">
               <div className="sasiri-ticket-winning-numbers-title">
-                ----- Winning Numbers -----
+              ----- Winning Numbers -----
               </div>
               <div className="sasiri-ticket-winning-numbers-container">
                 {balls.length > 0
@@ -71,13 +71,6 @@ const SasiriEnglish = ({ name = "Sasiri" }) => {
                   : "Loading..."}
               </div>
             </div>
-            <div className="lagna-ticket-special">
-              <div className="lagna-ticket-bottom">
-                <div className="lagna-ticket-next-jackpot">
-                  Next Super Jackpot : Rs. {lottery.next_super || "Loading..."}
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -85,4 +78,4 @@ const SasiriEnglish = ({ name = "Sasiri" }) => {
   );
 };
 
-export default SasiriEnglish;
+export default SasiriSinhala;
