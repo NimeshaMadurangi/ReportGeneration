@@ -45,6 +45,21 @@ const LagnaWasanaSinhala = ({ name = "Lagna Wasanawa" }) => {
     return color;
   };
 
+  const ballImageMap = {
+    CAPRICORN: "/images/lagnaimages/capricorn.png",
+    // AQUARIUS: "/images/lagnaimages/aquarius.png",
+    // PISCES: "/images/lagnaimages/pisces.png",
+    // ARIES: "/images/lagnaimages/aries.png",
+    // TAURUS: "/images/lagnaimages/taurus.png",
+    // GEMINI: "/images/lagnaimages/gemini.png",
+    // CANCER: "/images/lagnaimages/cancer.png",
+    // LEO: "/images/lagnaimages/leo.png",
+    // VIRGO: "/images/lagnaimages/virgo.png",
+    // LIBRA: "/images/lagnaimages/libra.png",
+    // SCORPIO: "/images/lagnaimages/scorpio.png",
+    // SAGITTARIUS: "/images/lagnaimages/sagittarius.png",
+  };
+
   return (
     <div className="lagna-ticket-container">
       <div className="lagna-ticket-card">
@@ -72,15 +87,21 @@ const LagnaWasanaSinhala = ({ name = "Lagna Wasanawa" }) => {
                 ජයග්‍රාහී අංක
               </div>
               <div className="lagna-ticket-winning-numbers-container">
-                {balls.length > 0
-                  ? balls.map((ball, index) => (
-                      <div key={index} className="lagna-ticket-winning-number">
-                        <div className="lagna-ticket-winning-number-text">
-                          {ball}
+                  {balls.length > 0
+                    ? balls.map((ball, index) => (
+                        <div key={index} className="lagna-ticket-winning-number">
+                          {index === 4 && ballImageMap[ball] ? ( // Check if it's ball5 and a valid image exists
+                            <img
+                              src={ballImageMap[ball]}
+                              alt={`Ball ${ball}`}
+                              className="lagna-ticket-ball-image"
+                            />
+                          ) : (
+                            <div className="lagna-ticket-winning-number-text">{ball}</div> // Render text for other balls
+                          )}
                         </div>
-                      </div>
-                    ))
-                  : "Loading..."}
+                      ))
+                    : "Loading..."}
               </div>
             </div>
             <div className="lagna-ticket-special">
@@ -96,7 +117,7 @@ const LagnaWasanaSinhala = ({ name = "Lagna Wasanawa" }) => {
                   className="lagna-ticket-special-prize-icon"
                 />
                 <div>
-                  රු. 50,000/= සඳහා <br /> විශේෂ අංකය
+                  රු. 50,000/- සඳහා <br /> විශේෂ අංකය
                 </div>
               </div>
             </div>

@@ -18,7 +18,7 @@
   color: white;
   font-size: 0.8rem;
   font-weight: 1000;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
   margin-top: 0.2rem;
 }
 
@@ -26,12 +26,12 @@
   display: flex;
   justify-content: center;
   gap: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.7rem;
 }
 
 .lagna-ticket-winning-number {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 2rem;
+  height: 2rem;
   background-color: #ffffff;
   border-radius: 0.375rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -42,9 +42,9 @@
 }
 
 .lagna-ticket-winning-number-text {
-  font-size: 0.875rem;
-  font-weight: 800;
-  align-items: center;
+  font-size: 1rem;
+  font-weight: 1000;
+  text-align: center;
 }
 
 /* Header Section */
@@ -86,6 +86,7 @@
   color: #2d3748;
   font-weight: 800;
   font-size: 0.5rem;
+  text-align: center;
 }
 
 /* Color Section */
@@ -101,7 +102,7 @@
   border-radius: 0.375rem;
   padding: 0.2rem 0.2rem;
   display: inline-block;
-  margin-left: 5rem;
+  margin-left: 2rem;
 }
 
 .lagna-ticket-colour-text {
@@ -129,7 +130,7 @@
 .lagna-ticket-next-jackpot {
   display: flex;
   color: white;
-  font-size: 0.575rem;
+  font-size: 0.475rem;
 }
 
 .lagna-ticket-special {
@@ -156,6 +157,14 @@
 /* Additional Styling */
 body {
   color: rgb(0, 0, 0);
-  font-size: 0.575rem;
+  font-size: 0.475rem;
 }
+
+.lagna-ticket-ball-image {
+  width: 30px; /* Adjust as needed */
+  height: auto;
+  margin: 0 2px;
+  display: inline-block;
+}
+
 

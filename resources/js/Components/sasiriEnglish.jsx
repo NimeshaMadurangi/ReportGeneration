@@ -71,9 +71,9 @@ const SasiriEnglish = ({ name = "Sasiri" }) => {
                   : "Loading..."}
               </div>
             </div>
-            <div className="lagna-ticket-special">
-              <div className="lagna-ticket-bottom">
-                <div className="lagna-ticket-next-jackpot">
+            <div className="sasiri-ticket-special">
+              <div className="sasiri-ticket-bottom">
+                <div className="sasiri-ticket-next-jackpot">
                   Next Super Jackpot : Rs. {lottery.next_super || "Loading..."}
                 </div>
               </div>

@@ -30,6 +30,16 @@ const SasiriSinhala = ({ name = "Sasiri" }) => {
     (ball) => ball !== null
   );
 
+  const translateColor = (color) => {
+    if (color === "Green") {
+      return "කොළ";
+    }
+    else if (color === "Red") {
+        return "රතු";
+    }
+    return color;
+  };
+
   return (
     <div className="sasiri-ticket-container">
       <div className="sasiri-ticket-card">
@@ -44,17 +54,17 @@ const SasiriSinhala = ({ name = "Sasiri" }) => {
           <div className="sasiri-ticket-draw-number-container">
             <div className="sasiri-ticket-draw-number">
               <div className="sasiri-ticket-draw-number-text">
-                Draw Number ▶ {lottery.number || "Loading..."}
+                දිනුම් වාරය ▶ {lottery.number || "Loading..."}
               </div>
             </div>
             <div className="sasiri-ticket-color">
               <div className="sasiri-ticket-colour-text">
-                Colour ▶ {lottery.color || "Loading..."}
+                වර්ණය ▶ {translateColor(lottery.color) || "Loading..."}
               </div>
             </div>
             <div className="sasiri-ticket-winning-numbers">
               <div className="sasiri-ticket-winning-numbers-title">
-              ----- Winning Numbers -----
+                -------- ජයග්‍රාහී  අංක --------
               </div>
               <div className="sasiri-ticket-winning-numbers-container">
                 {balls.length > 0
@@ -69,6 +79,13 @@ const SasiriSinhala = ({ name = "Sasiri" }) => {
                       </div>
                     ))
                   : "Loading..."}
+              </div>
+            </div>
+            <div className="sasiri-ticket-special">
+              <div className="sasiri-ticket-bottom">
+                <div className="sasiri-ticket-next-jackpot">
+                  මීළඟ සුපිරි ජයමල්ල රු. {lottery.next_super || "Loading..."}
+                </div>
               </div>
             </div>
           </div>
