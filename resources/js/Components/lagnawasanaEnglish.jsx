@@ -79,14 +79,14 @@ const LagnaWasanaEnglish = ({ name = "Lagna Wasanawa" }) => {
                   {balls.length > 0
                     ? balls.map((ball, index) => (
                         <div key={index} className="lagna-ticket-winning-number">
-                          {index === 4 && ballImageMap[ball] ? ( // Check if it's ball5 and a valid image exists
+                          {index === 4 && ballImageMap[ball] ? ( 
                             <img
                               src={ballImageMap[ball]}
                               alt={`Ball ${ball}`}
                               className="lagna-ticket-ball-image"
                             />
                           ) : (
-                            <div className="lagna-ticket-winning-number-text">{ball}</div> // Render text for other balls
+                            <div className="lagna-ticket-winning-number-text">{ball}</div> 
                           )}
                         </div>
                       ))

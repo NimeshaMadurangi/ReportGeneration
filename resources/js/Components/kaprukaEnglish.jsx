@@ -1,81 +1,94 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "../../css/kapruka.css";
 
-const KaprukaEnglish = ({ lottery }) => {
+const KaprukaEnglish = ({ name = "Kapruka" }) => {
+  const [lottery, setLottery] = useState({
+    number: null,
+    color: null,
+    ball1: null,
+    ball2: null,
+    ball3: null,
+    ball4: null,
+    ball5: null,
+    ball6: null,
+    next_super: null,
+  });
+
+  useEffect(() => {
+    const fetchLottery = async () => {
+      try {
+        const response = await axios.get(`/api/lottery`, { params: { name } });
+        setLottery(response.data);
+      } catch (error) {
+        console.error("Error fetching lottery data:", error);
+      }
+    };
+
+    fetchLottery();
+  }, [name]);
+
+  // Combine individual balls into an array
+  const balls = [lottery.ball1,lottery.ball2,lottery.ball3,lottery.ball4].filter(
+    (ball) => ball !== null
+  );
+
   return (
-    <div className="w-full max-w-4xl bg-gradient-to-r from-gray-800 to-gray-900 p-4 rounded-lg">
-      {/* Header Section */}
-      <div className="flex items-center justify-between mb-4">
-        {/* Tree Logo */}
-        <img 
-          src="../images/logo.png" 
-          alt="Tree logo" 
-          className="w-12 h-12"
-        />
-        <div className="text-white text-lg">
-          English Letter, Super Number & Winning Numbers
-        </div>
-      </div>
-
-      {/* Numbers Section */}
-      <div className="flex items-center gap-6 mb-4">
-        {/* Single Circle */}
-        <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center border-2 border-gray-300">
-          {lottery.ball1 && <span className="text-xl font-bold">{lottery.ball1}</span>}
-        </div>
-
-        {/* Four Square Group */}
-        <div className="flex gap-2">
-          {[lottery.ball2, lottery.ball3, lottery.ball4, lottery.ball5].map((number, index) => (
-            <div 
-              key={index}
-              className="w-12 h-12 bg-white flex items-center justify-center border-2 border-gray-300"
-            >
-              {number && <span className="text-xl font-bold">{number}</span>}
+    <div className="kapruka-ticket-container">
+      <div className="kapruka-ticket-card">
+        <div className="kapruka-ticket-header">
+          <div className="kapruka-ticket-logo-container">
+            <img
+              src="/images/kaprukalogo.png"
+              alt={name}
+              className="kapruka-ticket-logo"
+            />
+          </div>
+          <div className="kapruka-ticket-draw-number-container">
+            <div className="kapruka-ticket-draw-number">
+              <div className="kapruka-ticket-draw-number-text">
+                Draw Number ▶ {lottery.number || "Loading..."}
+              </div>
             </div>
-          ))}
-        </div>
-
-        {/* Draw Number Input */}
-        <div className="flex flex-col gap-1">
-          <div className="text-white text-sm">Draw Number</div>
-          <input 
-            type="text"
-            value={lottery.number || ''}
-            className="px-2 py-1 rounded border border-gray-300 w-32"
-            readOnly
-          />
-        </div>
-
-        {/* Color Input */}
-        <div className="flex flex-col gap-1">
-          <div className="text-white text-sm">Colour</div>
-          <input 
-            type="text"
-            value={lottery.color || ''}
-            className="px-2 py-1 rounded border border-gray-300 w-32"
-            readOnly
-          />
-        </div>
-      </div>
-
-      {/* Bottom Section */}
-      <div className="flex items-center justify-between">
-        <div className="bg-gray-700 px-4 py-2 rounded text-white">
-          <div className="text-sm">Next Super</div>
-          <div className="font-bold">Jackpot Rs. {lottery.next_super || '0'}</div>
-        </div>
-
-        {/* Info Section */}
-        <div className="flex items-center gap-2">
-          <img 
-            src="/api/placeholder/30/30" 
-            alt="Info icon" 
-            className="w-8 h-8"
-          />
-          <div className="text-white text-sm">
-            For Special Numbers
-            <br />
-            For Motor bike & Rs. 50,000 cash prize
+            <div className="kapruka-ticket-color">
+              <div className="kapruka-ticket-colour-text">
+                Colour ▶ {lottery.color || "Loading..."}
+              </div>
+            </div>
+            <div className="kapruka-ticket-winning-numbers">
+              <div className="kapruka-ticket-winning-numbers-title">
+                English Letter, Super Number & Winning Numbers
+              </div>
+              </div>
+              <div className="kapruka-ticket-winning-numbers-container">
+              <div className="kapruka-ticket-ball6">
+                  <div className="kapruka-ticket-ball6-number">
+                    <div className="kapruka-ticket-winning-number6-text">
+                      {lottery.ball6 || "Loading..."}
+                    </div>
+                  </div>
+              </div>
+                {balls.length > 0
+                  ? balls.map((ball, index) => (
+                      <div
+                        key={index}
+                        className="kapruka-ticket-winning-number"
+                      >
+                        <div className="kapruka-ticket-winning-number-text">
+                          {ball}
+                        </div>
+                      </div>
+                    ))
+                  : "Loading..."}
+              </div>
+            
+            <div className="kapruka-ticket-special">
+              <div className="kapruka-ticket-bottom">
+                <div className="kapruka-ticket-next-jackpot">
+                  Next Super Jackpot : Rs. {lottery.next_super || "Loading..."}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

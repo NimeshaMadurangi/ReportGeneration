@@ -1,72 +1,83 @@
-import React from 'react';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "../../css/kapruka.css";
 
-const DLBLotteryForm = () => {
+const KaprukaSinhala = ({ name = "Kapruka" }) => {
+  const [lottery, setLottery] = useState({
+    number: null,
+    color: null,
+    ball1: null,
+    ball2: null,
+    ball3: null,
+    next_super: null,
+  });
+
+  useEffect(() => {
+    const fetchLottery = async () => {
+      try {
+        const response = await axios.get(`/api/lottery`, { params: { name } });
+        setLottery(response.data);
+      } catch (error) {
+        console.error("Error fetching lottery data:", error);
+      }
+    };
+
+    fetchLottery();
+  }, [name]);
+
+  // Combine individual balls into an array
+  const balls = [lottery.ball1, lottery.ball2, lottery.ball3].filter(
+    (ball) => ball !== null
+  );
+
   return (
-    <div className="w-full max-w-4xl bg-gray-100 p-6 rounded-lg">
-      {/* Header */}
-      <div className="flex justify-between items-center mb-6 bg-white p-4 rounded shadow-sm">
-        <div className="flex items-center gap-2">
-          <div className="bg-blue-900 p-2 rounded">
-            <span className="text-white font-bold">DLB</span>
+    <div className="kapruka-ticket-container">
+      <div className="kapruka-ticket-card">
+        <div className="kapruka-ticket-header">
+          <div className="kapruka-ticket-logo-container">
+            <img
+              src="/images/kaprukalogo.png"
+              alt={name}
+              className="kapruka-ticket-logo"
+            />
           </div>
-          <div className="text-sm text-gray-600">
-            සම්පත්දාන ලොතරැයිය මණ්ඩලය
-            <div>www.dlb.lk</div>
-          </div>
-        </div>
-        <img src="/api/placeholder/40/40" alt="Kapruka logo" className="h-10" />
-      </div>
-
-      {/* Main Form */}
-      <div className="bg-gradient-to-r from-blue-800 to-blue-700 rounded-lg p-1">
-        {/* Tabs */}
-        <div className="flex gap-1 text-white text-sm mb-1">
-          <div className="bg-blue-600 px-6 py-3 rounded-t-lg flex items-center gap-2">
-            <img src="/api/placeholder/20/20" alt="" className="w-5 h-5" />
-            මගේ ගිණුම
-          </div>
-          <div className="px-6 py-3">පරීක්ෂා</div>
-          <div className="px-6 py-3">ගෙවීම</div>
-        </div>
-
-        {/* Form Content */}
-        <div className="bg-white rounded-lg p-6">
-          {/* Numbers Row */}
-          <div className="flex gap-6 mb-6">
-            <div className="flex-1">
-              <label className="text-gray-600 text-sm mb-2 block">අංකය</label>
-              <div className="flex gap-3">
-                {[1, 2, 3, 4, 5].map(num => (
-                  <div key={num} className="w-12 h-12 rounded-full border-2 border-gray-300 flex items-center justify-center text-gray-700">
-                    {num}
-                  </div>
-                ))}
+          <div className="kapruka-ticket-draw-number-container">
+            <div className="kapruka-ticket-draw-number">
+              <div className="kapruka-ticket-draw-number-text">
+                Draw Number ▶ {lottery.number || "Loading..."}
               </div>
             </div>
-            <div className="w-48">
-              <label className="text-gray-600 text-sm mb-2 block">වර්ගය</label>
-              <select className="w-full border rounded-lg p-2 bg-white text-gray-700">
-                <option>ශ්‍රී ලංකා</option>
-              </select>
+            <div className="kapruka-ticket-color">
+              <div className="kapruka-ticket-colour-text">
+                Colour ▶ {lottery.color || "Loading..."}
+              </div>
             </div>
-          </div>
-
-          {/* Date and Amount Row */}
-          <div className="grid grid-cols-2 gap-6">
-            <div>
-              <label className="text-gray-600 text-sm mb-2 block">දිනය</label>
-              <input type="date" className="w-full border rounded-lg p-2" />
+            <div className="kapruka-ticket-winning-numbers">
+              <div className="kapruka-ticket-winning-numbers-title">
+                English Letter, Super Number & Winning Numbers
+              </div>
+              <div className="kapruka-ticket-winning-numbers-container">
+                {balls.length > 0
+                  ? balls.map((ball, index) => (
+                      <div
+                        key={index}
+                        className="kapruka-ticket-winning-number"
+                      >
+                        <div className="kapruka-ticket-winning-number-text">
+                          {ball}
+                        </div>
+                      </div>
+                    ))
+                  : "Loading..."}
+              </div>
             </div>
-            <div>
-              <label className="text-gray-600 text-sm mb-2 block">මුදල</label>
-              <input type="number" className="w-full border rounded-lg p-2" />
+            <div className="kapruka-ticket-special">
+              <div className="kapruka-ticket-bottom">
+                <div className="kapruka-ticket-next-jackpot">
+                  Next Super Jackpot : Rs. {lottery.next_super || "Loading..."}
+                </div>
+              </div>
             </div>
-          </div>
-
-          {/* Helper Text */}
-          <div className="mt-6 flex items-center gap-2 text-gray-500 text-sm">
-            <img src="/api/placeholder/20/20" alt="" className="w-5 h-5" />
-            කරුණාකර ඉහත තොරතුරු ඇතුලත් කරන්න
           </div>
         </div>
       </div>
@@ -74,4 +85,4 @@ const DLBLotteryForm = () => {
   );
 };
 
-export default DLBLotteryForm;
+export default KaprukaSinhala;
