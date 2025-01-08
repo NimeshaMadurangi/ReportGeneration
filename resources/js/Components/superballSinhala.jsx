@@ -2,13 +2,15 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../../css/superball.css";
 
-const SuperballSinhala = ({ name = "Superball" }) => {
+const SuperballEnglish = ({ name = "Superball" }) => {
   const [lottery, setLottery] = useState({
     number: null,
     color: null,
     ball1: null,
     ball2: null,
     ball3: null,
+    ball4: null,
+    ball5: null,
     next_super: null,
   });
 
@@ -26,9 +28,20 @@ const SuperballSinhala = ({ name = "Superball" }) => {
   }, [name]);
 
  
-  const balls = [lottery.ball1, lottery.ball2, lottery.ball3].filter(
+  const balls = [lottery.ball1, lottery.ball2, lottery.ball3, lottery.ball4, lottery.ball5].filter(
     (ball) => ball !== null
   );
+
+  const translateColor = (color) => {
+    if (color === "Green") {
+      return "කොළ";
+    }
+    else if (color === "Red") {
+        return "රතු";
+    }
+    return color;
+  };
+
 
   return (
     <div className="superball-ticket-container">
@@ -44,17 +57,17 @@ const SuperballSinhala = ({ name = "Superball" }) => {
           <div className="superball-ticket-draw-number-container">
             <div className="superball-ticket-draw-number">
               <div className="superball-ticket-draw-number-text">
-                Draw Number ▶ {lottery.number || "Loading..."}
+                දිනුම් වාරය ▶ {lottery.number || "Loading..."}
               </div>
             </div>
             <div className="superball-ticket-color">
               <div className="superball-ticket-colour-text">
-                Colour ▶ {lottery.color || "Loading..."}
+                වර්ණය ▶ {translateColor(lottery.color) || "Loading..."}
               </div>
             </div>
             <div className="superball-ticket-winning-numbers">
               <div className="superball-ticket-winning-numbers-title">
-                English Letter, Super Number & Winning Numbers
+                ------- ජයග්‍රාහී අංක -------
               </div>
               <div className="superball-ticket-winning-numbers-container">
                 {balls.length > 0
@@ -74,7 +87,7 @@ const SuperballSinhala = ({ name = "Superball" }) => {
             <div className="superball-ticket-special">
               <div className="superball-ticket-bottom">
                 <div className="superball-ticket-next-jackpot">
-                  Next Super Jackpot : Rs. {lottery.next_super || "Loading..."}
+                  මීළඟ සුපිරි ජයමල්ල රු. {lottery.next_super || "Loading..."}
                 </div>
               </div>
             </div>
@@ -85,4 +98,4 @@ const SuperballSinhala = ({ name = "Superball" }) => {
   );
 };
 
-export default SuperballSinhala;
+export default SuperballEnglish;

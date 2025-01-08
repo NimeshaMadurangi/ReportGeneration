@@ -9,6 +9,8 @@ const ShanidaSinhala = ({ name = "Shanida" }) => {
     ball1: null,
     ball2: null,
     ball3: null,
+    ball4: null,
+    ball5: null,
     next_super: null,
   });
 
@@ -25,10 +27,20 @@ const ShanidaSinhala = ({ name = "Shanida" }) => {
     fetchLottery();
   }, [name]);
 
-  // Combine individual balls into an array
-  const balls = [lottery.ball1, lottery.ball2, lottery.ball3].filter(
+ 
+  const balls = [lottery.ball1, lottery.ball2, lottery.ball3, lottery.ball4, lottery.ball5].filter(
     (ball) => ball !== null
   );
+
+  const translateColor = (color) => {
+    if (color === "Green") {
+      return "කොළ";
+    }
+    else if (color === "Red") {
+        return "රතු";
+    }
+    return color;
+  };
 
   return (
     <div className="shanida-ticket-container">
@@ -44,17 +56,17 @@ const ShanidaSinhala = ({ name = "Shanida" }) => {
           <div className="shanida-ticket-draw-number-container">
             <div className="shanida-ticket-draw-number">
               <div className="shanida-ticket-draw-number-text">
-                Draw Number ▶ {lottery.number || "Loading..."}
+                දිනුම් වාරය ▶ {lottery.number || "Loading..."}
               </div>
             </div>
             <div className="shanida-ticket-color">
               <div className="shanida-ticket-colour-text">
-                Colour ▶ {lottery.color || "Loading..."}
+                වර්ණය ▶ {translateColor(lottery.color) || "Loading..."}
               </div>
             </div>
             <div className="shanida-ticket-winning-numbers">
               <div className="shanida-ticket-winning-numbers-title">
-                English Letter, Super Number & Winning Numbers
+                ------- ජයග්‍රාහී අංක -------
               </div>
               <div className="shanida-ticket-winning-numbers-container">
                 {balls.length > 0
@@ -74,7 +86,17 @@ const ShanidaSinhala = ({ name = "Shanida" }) => {
             <div className="shanida-ticket-special">
               <div className="shanida-ticket-bottom">
                 <div className="shanida-ticket-next-jackpot">
-                  Next Super Jackpot : Rs. {lottery.next_super || "Loading..."}
+                  මීළඟ සුපිරි ජයමල්ල රු. {lottery.next_super || "Loading..."}
+                </div>
+              </div>
+              <div className="shanida-ticket-special-prize-container">
+                <img
+                  src="/images/sc.png"
+                  alt="Special Prize"
+                  className="shanida-ticket-special-prize-icon"
+                />
+                <div>
+                  රු. 50,000/- සඳහා <br /> විශේෂ අංකය
                 </div>
               </div>
             </div>

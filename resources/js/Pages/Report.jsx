@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
+import "../../css/report.css";
 
 import LagnaWasanaEnglish from "../Components/LagnaWasanaEnglish";
 import LagnaWasanaTamil from "@/Components/lagnawasanawaTamil";
@@ -20,6 +21,9 @@ import SuperballTamil from "@/Components/superballTamil";
 import AdakotipathiEnglish from "@/Components/adakotipathiEnglish";
 import AdakotipathiSinhala from "@/Components/adakotipathiSinhala";
 import AdakotipathiTamil from "@/Components/adakotipathiTamil";
+import SupiridanaEnglish from "@/Components/supiridanaEnglish";
+import SupiridanaSinhala from "@/Components/supiridanaSinhala";
+import SupiridanaTamil from "@/Components/supiridanaTamil";
 
 const Report = () => {
   const englishRef = useRef(null);
@@ -27,70 +31,82 @@ const Report = () => {
   const tamilRef = useRef(null);
 
   const downloadPDF = async () => {
-    const pdf = new jsPDF("p", "mm", "a4");
-    const width = 210;
-    let yOffset = 0;
+    try {
+      const pdf = new jsPDF("p", "mm", "a4");
+      const width = 210; // PDF width in mm
+      let yOffset = 0;
 
-    const generatePage = async (ref) => {
-      const element = ref.current;
-      const canvas = await html2canvas(element);
-      const imgData = canvas.toDataURL("image/png");
-      const imgHeight = (canvas.height * width) / canvas.width;
+      const generatePage = async (ref) => {
+        if (!ref.current) {
+          console.error("Reference element not found.");
+          return;
+        }
+        const element = ref.current;
+        const canvas = await html2canvas(element);
+        const imgData = canvas.toDataURL("image/png");
+        const imgHeight = (canvas.height * width) / canvas.width;
 
-      if (yOffset !== 0) {
-        pdf.addPage();
-      }
+        if (yOffset !== 0) {
+          pdf.addPage();
+        }
+        pdf.addImage(imgData, "PNG", 0, 0, width, imgHeight);
+        yOffset += imgHeight;
+      };
 
-      pdf.addImage(imgData, "PNG", 0, 0, width, imgHeight);
-      yOffset += imgHeight;
-    };
+      await generatePage(englishRef);
+      await generatePage(sinhalaRef);
+      await generatePage(tamilRef);
 
-    await generatePage(englishRef); // First page
-    await generatePage(sinhalaRef); // Second page
-    await generatePage(tamilRef); // Third page
-
-    pdf.save("Report.pdf");
+      pdf.save("Report.pdf");
+    } catch (error) {
+      console.error("Error generating PDF:", error);
+    }
   };
 
+  const renderSection = (ref, components) => (
+    <div ref={ref} className="section-container">
+      {components.map((Component, index) => (
+        <Component key={index} />
+      ))}
+    </div>
+  );
+
   return (
-    <div>
-      <button
-        onClick={downloadPDF}
-        className="bg-blue-800 text-white px-4 py-2 rounded mb-4"
-      >
+    <div className="report-wrapper">
+      <button onClick={downloadPDF} className="download-button">
         Download as PDF
       </button>
 
-      <div>
-        {/* English Section */}
-        <div ref={englishRef} className="grid grid-cols-7 sm:grid-cols-2 md:grid-cols-1 gap-x-3 gap-y-3 mt-8">
-          <LagnaWasanaEnglish />
-          <SasiriEnglish />
-          <KaprukaEnglish />
-          <ShanidaEnglish />
-          <SuperballEnglish />
-          <AdakotipathiEnglish />
-        </div>
+      <div className="report-sections">
+        {renderSection(englishRef, [
+          LagnaWasanaEnglish,
+          SasiriEnglish,
+          KaprukaEnglish,
+          ShanidaEnglish,
+          SuperballEnglish,
+          AdakotipathiEnglish,
+          SupiridanaEnglish,
+        ])}
 
-        {/* Sinhala Section */}
-        <div ref={sinhalaRef} className="grid grid-cols-7 sm:grid-cols-2 md:grid-cols-1 gap-x-3 gap-y-3 mt-8">
-          <LagnaWasanaSinhala />
-          <SasiriSinhala />
-          <KaprukaSinhala />
-          <ShanidaSinhala />
-          <SuperballSinhala />
-          <AdakotipathiSinhala />
-        </div>
+        {renderSection(sinhalaRef, [
+          LagnaWasanaSinhala,
+          SasiriSinhala,
+          KaprukaSinhala,
+          ShanidaSinhala,
+          SuperballSinhala,
+          AdakotipathiSinhala,
+          SupiridanaSinhala,
+        ])}
 
-        {/* Tamil Section */}
-        <div ref={tamilRef} className="grid grid-cols-7 sm:grid-cols-2 md:grid-cols-1 gap-x-3 gap-y-3 mt-8">
-          <LagnaWasanaTamil />
-          <SasiriTamil />
-          <KaprukaTamil />
-          <ShanidaTamil />
-          <SuperballTamil />
-          <AdakotipathiTamil />
-        </div>
+        {renderSection(tamilRef, [
+          LagnaWasanaTamil,
+          SasiriTamil,
+          KaprukaTamil,
+          ShanidaTamil,
+          SuperballTamil,
+          AdakotipathiTamil,
+          SupiridanaTamil,
+        ])}
       </div>
     </div>
   );

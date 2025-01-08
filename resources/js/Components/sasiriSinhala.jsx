@@ -46,7 +46,7 @@ const SasiriSinhala = ({ name = "Sasiri" }) => {
         <div className="sasiri-ticket-header">
           <div className="sasiri-ticket-logo-container">
             <img
-              src="/images/sas.png"
+              src="/images/sasirisin.png"
               alt={name}
               className="sasiri-ticket-logo"
             />

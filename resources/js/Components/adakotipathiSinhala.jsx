@@ -2,13 +2,15 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../../css/adakotipathi.css";
 
-const AdakotipathiSinhala = ({ name = "Adakotipathi" }) => {
+const AdakotipathiSinhala = ({ name = "Ada kotipathi" }) => {
   const [lottery, setLottery] = useState({
     number: null,
     color: null,
     ball1: null,
     ball2: null,
     ball3: null,
+    ball4: null,
+    ball5: null,
     next_super: null,
   });
 
@@ -26,9 +28,22 @@ const AdakotipathiSinhala = ({ name = "Adakotipathi" }) => {
   }, [name]);
 
  
-  const balls = [lottery.ball1, lottery.ball2, lottery.ball3].filter(
+  const balls = [lottery.ball1, lottery.ball2, lottery.ball3, lottery.ball4, lottery.ball5].filter(
     (ball) => ball !== null
   );
+
+  const translateColor = (color) => {
+    if (color === "Green") {
+      return "කොළ";
+    }
+    else if (color === "Red") {
+        return "රතු";
+    }
+    else if (color === "Blue") {
+      return "නිල්";
+    }
+    return color;
+  };
 
   return (
     <div className="adakotipathi-ticket-container">
@@ -44,17 +59,17 @@ const AdakotipathiSinhala = ({ name = "Adakotipathi" }) => {
           <div className="adakotipathi-ticket-draw-number-container">
             <div className="adakotipathi-ticket-draw-number">
               <div className="adakotipathi-ticket-draw-number-text">
-                Draw Number ▶ {lottery.number || "Loading..."}
+                දිනුම් වාරය ▶ {lottery.number || "Loading..."}
               </div>
             </div>
             <div className="adakotipathi-ticket-color">
               <div className="adakotipathi-ticket-colour-text">
-                Colour ▶ {lottery.color || "Loading..."}
+                වර්ණය ▶ {translateColor(lottery.color) || "Loading..."}
               </div>
             </div>
             <div className="adakotipathi-ticket-winning-numbers">
               <div className="adakotipathi-ticket-winning-numbers-title">
-                English Letter, Super Number & Winning Numbers
+                ----- ජයග්‍රාහී අංක -----
               </div>
               <div className="adakotipathi-ticket-winning-numbers-container">
                 {balls.length > 0
@@ -74,7 +89,7 @@ const AdakotipathiSinhala = ({ name = "Adakotipathi" }) => {
             <div className="adakotipathi-ticket-special">
               <div className="adakotipathi-ticket-bottom">
                 <div className="adakotipathi-ticket-next-jackpot">
-                  Next Super Jackpot : Rs. {lottery.next_super || "Loading..."}
+                  මීළඟ සුපිරි ජයමල්ල රු. {lottery.next_super || "Loading..."}
                 </div>
               </div>
             </div>

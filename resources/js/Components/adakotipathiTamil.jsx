@@ -2,13 +2,15 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../../css/adakotipathi.css";
 
-const AdakotipathiTamil = ({ name = "Adakotipathi" }) => {
+const AdakotipathiTamil = ({ name = "Ada kotipathi" }) => {
   const [lottery, setLottery] = useState({
     number: null,
     color: null,
     ball1: null,
     ball2: null,
     ball3: null,
+    ball4: null,
+    ball5: null,
     next_super: null,
   });
 
@@ -26,7 +28,7 @@ const AdakotipathiTamil = ({ name = "Adakotipathi" }) => {
   }, [name]);
 
  
-  const balls = [lottery.ball1, lottery.ball2, lottery.ball3].filter(
+  const balls = [lottery.ball1, lottery.ball2, lottery.ball3, lottery.ball4, lottery.ball5].filter(
     (ball) => ball !== null
   );
 

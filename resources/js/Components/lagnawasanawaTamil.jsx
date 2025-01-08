@@ -66,7 +66,7 @@ const LagnaWasanaTamil = ({ name = "Lagna Wasanawa" }) => {
         <div className="lagna-ticket-header">
           <div className="lagna-ticket-logo-container">
             <img
-              src="/images/lag.png"
+              src="/images/lagnatamil.png"
               alt={name}
               className="lagna-ticket-logo"
             />

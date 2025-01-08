@@ -64,6 +64,11 @@ const KaprukaEnglish = ({ name = "Kapruka" }) => {
               <div className="kapruka-ticket-ball6">
                   <div className="kapruka-ticket-ball6-number">
                     <div className="kapruka-ticket-winning-number6-text">
+                      {lottery.ball5 || "Loading..."}
+                    </div>
+                  </div>
+                  <div className="kapruka-ticket-ball6-number">
+                    <div className="kapruka-ticket-winning-number6-text">
                       {lottery.ball6 || "Loading..."}
                     </div>
                   </div>

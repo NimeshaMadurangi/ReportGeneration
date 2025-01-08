@@ -9,6 +9,8 @@ const ShanidaEnglish = ({ name = "Shanida" }) => {
     ball1: null,
     ball2: null,
     ball3: null,
+    ball4: null,
+    ball5: null,
     next_super: null,
   });
 
@@ -26,7 +28,7 @@ const ShanidaEnglish = ({ name = "Shanida" }) => {
   }, [name]);
 
  
-  const balls = [lottery.ball1, lottery.ball2, lottery.ball3].filter(
+  const balls = [lottery.ball1, lottery.ball2, lottery.ball3, lottery.ball4, lottery.ball5].filter(
     (ball) => ball !== null
   );
 
@@ -54,7 +56,7 @@ const ShanidaEnglish = ({ name = "Shanida" }) => {
             </div>
             <div className="shanida-ticket-winning-numbers">
               <div className="shanida-ticket-winning-numbers-title">
-                English Letter, Super Number & Winning Numbers
+                ---- Winning Numbers ----
               </div>
               <div className="shanida-ticket-winning-numbers-container">
                 {balls.length > 0
@@ -75,6 +77,16 @@ const ShanidaEnglish = ({ name = "Shanida" }) => {
               <div className="shanida-ticket-bottom">
                 <div className="shanida-ticket-next-jackpot">
                   Next Super Jackpot : Rs. {lottery.next_super || "Loading..."}
+                </div>
+              </div>
+              <div className="shanida-ticket-special-prize-container">
+                <img
+                  src="/images/sc.png"
+                  alt="Special Prize"
+                  className="shanida-ticket-special-prize-icon"
+                />
+                <div>
+                  Special number for <br /> Rs. 50,000/- cash prize
                 </div>
               </div>
             </div>

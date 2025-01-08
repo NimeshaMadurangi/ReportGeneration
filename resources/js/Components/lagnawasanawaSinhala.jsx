@@ -42,6 +42,9 @@ const LagnaWasanaSinhala = ({ name = "Lagna Wasanawa" }) => {
     else if (color === "Red") {
         return "රතු";
     }
+    else if (color === "Blue") {
+      return "නිල්";
+    }
     return color;
   };
 

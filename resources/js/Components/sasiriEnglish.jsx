@@ -69,6 +69,11 @@ const SasiriEnglish = ({ name = "Sasiri" }) => {
                       </div>
                     ))
                   : "Loading..."}
+                  <div className="sasiri-ticket-winner-container">
+                    <div className="sasiri-ticket-winner">
+                        Total no.of <br/> Rs. 200,000 winners : {lottery.total_value || "Loading..."}
+                    </div>
+                  </div>
               </div>
             </div>
             <div className="sasiri-ticket-special">
