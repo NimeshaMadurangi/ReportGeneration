@@ -39,7 +39,7 @@ const KaprukaEnglish = ({ name = "Kapruka" }) => {
         <div className="kapruka-ticket-header">
           <div className="kapruka-ticket-logo-container">
             <img
-              src="/images/kaprukalogo.png"
+              src="/images/logo/kapruka.png"
               alt={name}
               className="kapruka-ticket-logo"
             />
@@ -86,6 +86,16 @@ const KaprukaEnglish = ({ name = "Kapruka" }) => {
               <div className="kapruka-ticket-bottom">
                 <div className="kapruka-ticket-next-jackpot">
                   Next Super Jackpot : Rs. {lottery.next_super || "Loading..."}
+                </div>
+              </div>
+              <div className="kapruka-ticket-special-prize-container">
+                <img
+                  src="/images/sc.png"
+                  alt="Special Prize"
+                  className="kapruka-ticket-special-prize-icon"
+                />
+                <div>
+                  Special number for <br /> Rs. 50,000/- cash prize
                 </div>
               </div>
             </div>

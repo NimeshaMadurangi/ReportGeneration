@@ -9,7 +9,7 @@ const SasiriEnglish = ({ name = "Sasiri" }) => {
     ball1: null,
     ball2: null,
     ball3: null,
-    next_super: null,
+    total_value: null,
   });
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const SasiriEnglish = ({ name = "Sasiri" }) => {
         <div className="sasiri-ticket-header">
           <div className="sasiri-ticket-logo-container">
             <img
-              src="/images/sas.png"
+              src="/images/sasirienglish.png"
               alt={name}
               className="sasiri-ticket-logo"
             />
@@ -74,7 +74,7 @@ const SasiriEnglish = ({ name = "Sasiri" }) => {
             <div className="sasiri-ticket-special">
               <div className="sasiri-ticket-bottom">
                 <div className="sasiri-ticket-next-jackpot">
-                  Next Super Jackpot : Rs. {lottery.next_super || "Loading..."}
+                  Total Value of Prize : {lottery.total_value || "Loading..."}
                 </div>
               </div>
             </div>

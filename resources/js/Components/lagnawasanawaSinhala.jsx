@@ -47,17 +47,17 @@ const LagnaWasanaSinhala = ({ name = "Lagna Wasanawa" }) => {
 
   const ballImageMap = {
     CAPRICORN: "/images/lagnaimages/capricorn.png",
-    // AQUARIUS: "/images/lagnaimages/aquarius.png",
-    // PISCES: "/images/lagnaimages/pisces.png",
-    // ARIES: "/images/lagnaimages/aries.png",
-    // TAURUS: "/images/lagnaimages/taurus.png",
-    // GEMINI: "/images/lagnaimages/gemini.png",
-    // CANCER: "/images/lagnaimages/cancer.png",
-    // LEO: "/images/lagnaimages/leo.png",
-    // VIRGO: "/images/lagnaimages/virgo.png",
-    // LIBRA: "/images/lagnaimages/libra.png",
-    // SCORPIO: "/images/lagnaimages/scorpio.png",
-    // SAGITTARIUS: "/images/lagnaimages/sagittarius.png",
+    AQUARIUS: "/images/lagnaimages/aquarius.png",
+    PISCES: "/images/lagnaimages/pisces.png",
+    ARIES: "/images/lagnaimages/aries.png",
+    TAURUS: "/images/lagnaimages/taurus.png",
+    GEMINI: "/images/lagnaimages/gemini.png",
+    CANCER: "/images/lagnaimages/cancer.png",
+    LEO: "/images/lagnaimages/leo.png",
+    VIRGO: "/images/lagnaimages/virgo.png",
+    LIBRA: "/images/lagnaimages/libra.png",
+    SCORPIO: "/images/lagnaimages/scorpio.png",
+    SAGITTARIUS: "/images/lagnaimages/sagittarius.png",
   };
 
   return (
@@ -112,7 +112,7 @@ const LagnaWasanaSinhala = ({ name = "Lagna Wasanawa" }) => {
               </div>
               <div className="lagna-ticket-special-prize-container">
                 <img
-                  src="/images/sc.png"
+                  src="/images/scsinhala.png"
                   alt="Special Prize"
                   className="lagna-ticket-special-prize-icon"
                 />

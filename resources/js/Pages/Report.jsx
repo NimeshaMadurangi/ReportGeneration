@@ -28,7 +28,7 @@ const Report = () => {
 
   const downloadPDF = async () => {
     const pdf = new jsPDF("p", "mm", "a4");
-    const width = 210; // A4 width in mm
+    const width = 210;
     let yOffset = 0;
 
     const generatePage = async (ref) => {

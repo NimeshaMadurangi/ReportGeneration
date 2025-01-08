@@ -25,6 +25,16 @@ const KaprukaSinhala = ({ name = "Kapruka" }) => {
     fetchLottery();
   }, [name]);
 
+  const translateColor = (color) => {
+    if (color === "Green") {
+      return "කොළ";
+    }
+    else if (color === "Red") {
+        return "රතු";
+    }
+    return color;
+  };
+  
   // Combine individual balls into an array
   const balls = [lottery.ball1, lottery.ball2, lottery.ball3].filter(
     (ball) => ball !== null
@@ -44,17 +54,17 @@ const KaprukaSinhala = ({ name = "Kapruka" }) => {
           <div className="kapruka-ticket-draw-number-container">
             <div className="kapruka-ticket-draw-number">
               <div className="kapruka-ticket-draw-number-text">
-                Draw Number ▶ {lottery.number || "Loading..."}
+                දිනුම් වාරය ▶ {lottery.number || "Loading..."}
               </div>
             </div>
             <div className="kapruka-ticket-color">
               <div className="kapruka-ticket-colour-text">
-                Colour ▶ {lottery.color || "Loading..."}
+                වර්ණය ▶ {translateColor(lottery.color) || "Loading..."}
               </div>
             </div>
             <div className="kapruka-ticket-winning-numbers">
               <div className="kapruka-ticket-winning-numbers-title">
-                English Letter, Super Number & Winning Numbers
+                ඉංග්‍රීසි අංකය, සුපිරි අංකය සහ ජයග්‍රාහී අංක
               </div>
               <div className="kapruka-ticket-winning-numbers-container">
                 {balls.length > 0
@@ -74,7 +84,7 @@ const KaprukaSinhala = ({ name = "Kapruka" }) => {
             <div className="kapruka-ticket-special">
               <div className="kapruka-ticket-bottom">
                 <div className="kapruka-ticket-next-jackpot">
-                  Next Super Jackpot : Rs. {lottery.next_super || "Loading..."}
+                  මීළඟ සුපිරි ජයමල්ල රු. {lottery.next_super || "Loading..."}
                 </div>
               </div>
             </div>
