@@ -32,6 +32,16 @@ const AdakotipathiTamil = ({ name = "Ada kotipathi" }) => {
     (ball) => ball !== null
   );
 
+  const translateColor = (color) => {
+    if (color === "Green") {
+      return "பச்சை";
+    }
+    else if (color === "Red") {
+        return "சிவப்பு";
+    }
+    return color;
+  };
+
   return (
     <div className="adakotipathi-ticket-container">
       <div className="adakotipathi-ticket-card">
@@ -46,17 +56,17 @@ const AdakotipathiTamil = ({ name = "Ada kotipathi" }) => {
           <div className="adakotipathi-ticket-draw-number-container">
             <div className="adakotipathi-ticket-draw-number">
               <div className="adakotipathi-ticket-draw-number-text">
-                Draw Number ▶ {lottery.number || "Loading..."}
+                வெற்றி வாரம் ▶ {lottery.number || "Loading..."}
               </div>
             </div>
             <div className="adakotipathi-ticket-color">
               <div className="adakotipathi-ticket-colour-text">
-                Colour ▶ {lottery.color || "Loading..."}
+                வர்ணம் ▶ {translateColor(lottery.color) || "Loading..."}
               </div>
             </div>
             <div className="adakotipathi-ticket-winning-numbers">
               <div className="adakotipathi-ticket-winning-numbers-title">
-                English Letter, Super Number & Winning Numbers
+                ----- வெற்றி எண்கள் -----
               </div>
               <div className="adakotipathi-ticket-winning-numbers-container">
                 {balls.length > 0
@@ -76,7 +86,7 @@ const AdakotipathiTamil = ({ name = "Ada kotipathi" }) => {
             <div className="adakotipathi-ticket-special">
               <div className="adakotipathi-ticket-bottom">
                 <div className="adakotipathi-ticket-next-jackpot">
-                  Next Super Jackpot : Rs. {lottery.next_super || "Loading..."}
+                  அடுத்த சுப்பர் ஐக்பொட் : ரூ. {lottery.next_super || "Loading..."}
                 </div>
               </div>
             </div>

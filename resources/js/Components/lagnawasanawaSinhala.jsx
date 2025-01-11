@@ -13,6 +13,7 @@ const LagnaWasanaSinhala = ({ name = "Lagna Wasanawa" }) => {
     ball4: null,
     ball5: null,
     next_super: null,
+    special1: null,
   });
 
   // Fetch lottery data on component mount
@@ -44,6 +45,9 @@ const LagnaWasanaSinhala = ({ name = "Lagna Wasanawa" }) => {
     }
     else if (color === "Blue") {
       return "නිල්";
+    }
+    else if (color === "Brown") {
+      return "දුඹුරු";
     }
     return color;
   };
@@ -120,7 +124,7 @@ const LagnaWasanaSinhala = ({ name = "Lagna Wasanawa" }) => {
                   className="lagna-ticket-special-prize-icon"
                 />
                 <div>
-                  රු. 50,000/- සඳහා <br /> විශේෂ අංකය
+                  රු. 50,000/- සඳහා <br /> විශේෂ අංකය : {lottery.special1 || "Loading..."}
                 </div>
               </div>
             </div>

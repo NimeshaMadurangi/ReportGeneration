@@ -19,8 +19,8 @@
   /* Grid Styles */
   .section-container {
     display: grid;
-    gap: 12px; /* Adjust spacing between grid items */
-    margin-top: 32px;
+    gap: 0.3rem; /* Adjust spacing between grid items */
+    margin-top: 1rem;
   }
   
   .section-container.grid-cols-7 {

@@ -2,13 +2,17 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../../css/supiridana.css";
 
-const SupiridanaEnglish = ({ name = "Supiridana" }) => {
+const SupiridanaEnglish = ({ name = "Supiri Dhana Sampatha" }) => {
   const [lottery, setLottery] = useState({
     number: null,
     color: null,
     ball1: null,
     ball2: null,
     ball3: null,
+    ball4: null,
+    ball5: null,
+    ball6: null,
+    ball7: null,
     next_super: null,
   });
 
@@ -26,7 +30,7 @@ const SupiridanaEnglish = ({ name = "Supiridana" }) => {
   }, [name]);
 
  
-  const balls = [lottery.ball1, lottery.ball2, lottery.ball3].filter(
+  const balls = [lottery.ball1, lottery.ball2, lottery.ball3, lottery.ball4, lottery.ball5, lottery.ball6, lottery.ball7].filter(
     (ball) => ball !== null
   );
 

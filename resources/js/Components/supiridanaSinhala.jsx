@@ -2,13 +2,17 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../../css/supiridana.css";
 
-const SupiridanaSinhala = ({ name = "Supiridana" }) => {
+const SupiridanaSinhala = ({ name = "Supiri Dhana Sampatha" }) => {
   const [lottery, setLottery] = useState({
     number: null,
     color: null,
     ball1: null,
     ball2: null,
     ball3: null,
+    ball4: null,
+    ball5: null,
+    ball6: null,
+    ball7: null,
     next_super: null,
   });
 
@@ -25,8 +29,23 @@ const SupiridanaSinhala = ({ name = "Supiridana" }) => {
     fetchLottery();
   }, [name]);
 
- 
-  const balls = [lottery.ball1, lottery.ball2, lottery.ball3].filter(
+  const translateColor = (color) => {
+    if (color === "Green") {
+      return "කොළ";
+    }
+    else if (color === "Red") {
+        return "රතු";
+    }
+    else if (color === "Blue") {
+      return "නිල්";
+    }
+    else if (color === "Yellow") {
+      return "කහ";
+    }
+    return color;
+  };
+
+  const balls = [lottery.ball1, lottery.ball2, lottery.ball3, lottery.ball4, lottery.ball5, lottery.ball6, lottery.ball7].filter(
     (ball) => ball !== null
   );
 
@@ -44,17 +63,17 @@ const SupiridanaSinhala = ({ name = "Supiridana" }) => {
           <div className="supiridana-ticket-draw-number-container">
             <div className="supiridana-ticket-draw-number">
               <div className="supiridana-ticket-draw-number-text">
-                Draw Number ▶ {lottery.number || "Loading..."}
+                  දිනුම් වාරය ▶ {lottery.number || "Loading..."}
               </div>
             </div>
             <div className="supiridana-ticket-color">
               <div className="supiridana-ticket-colour-text">
-                Colour ▶ {lottery.color || "Loading..."}
+                වර්ණය ▶ {translateColor(lottery.color) || "Loading..."}
               </div>
             </div>
             <div className="supiridana-ticket-winning-numbers">
               <div className="supiridana-ticket-winning-numbers-title">
-                English Letter, Super Number & Winning Numbers
+              ------- ඉංග්‍රීසි අකුර, සුපිරි අංකය සහ ජයග්‍රාහී අංක -------
               </div>
               <div className="supiridana-ticket-winning-numbers-container">
                 {balls.length > 0
@@ -74,7 +93,7 @@ const SupiridanaSinhala = ({ name = "Supiridana" }) => {
             <div className="supiridana-ticket-special">
               <div className="supiridana-ticket-bottom">
                 <div className="supiridana-ticket-next-jackpot">
-                  Next Super Jackpot : Rs. {lottery.next_super || "Loading..."}
+                    මීළඟ සුපිරි ජයමල්ල රු. {lottery.next_super || "Loading..."}
                 </div>
               </div>
             </div>

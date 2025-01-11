@@ -13,6 +13,7 @@ const KaprukaEnglish = ({ name = "Kapruka" }) => {
     ball5: null,
     ball6: null,
     next_super: null,
+    special1: null,
   });
 
   useEffect(() => {
@@ -29,7 +30,7 @@ const KaprukaEnglish = ({ name = "Kapruka" }) => {
   }, [name]);
 
   // Combine individual balls into an array
-  const balls = [lottery.ball1,lottery.ball2,lottery.ball3,lottery.ball4].filter(
+  const balls = [lottery.ball5, lottery.ball6, lottery.ball1,lottery.ball2,lottery.ball3,lottery.ball4].filter(
     (ball) => ball !== null
   );
 
@@ -61,18 +62,6 @@ const KaprukaEnglish = ({ name = "Kapruka" }) => {
               </div>
               </div>
               <div className="kapruka-ticket-winning-numbers-container">
-              <div className="kapruka-ticket-ball6">
-                  <div className="kapruka-ticket-ball6-number">
-                    <div className="kapruka-ticket-winning-number6-text">
-                      {lottery.ball5 || "Loading..."}
-                    </div>
-                  </div>
-                  <div className="kapruka-ticket-ball6-number">
-                    <div className="kapruka-ticket-winning-number6-text">
-                      {lottery.ball6 || "Loading..."}
-                    </div>
-                  </div>
-              </div>
                 {balls.length > 0
                   ? balls.map((ball, index) => (
                       <div
@@ -100,7 +89,7 @@ const KaprukaEnglish = ({ name = "Kapruka" }) => {
                   className="kapruka-ticket-special-prize-icon"
                 />
                 <div>
-                  Special number for <br /> Rs. 50,000/- cash prize
+                  Special number for <br /> Rs. 50,000/- cash prize : {lottery.special1 || "Loading..."}
                 </div>
               </div>
             </div>

@@ -9,18 +9,27 @@ class Lottery extends Model
 {
     use HasFactory;
 
-    protected $fillable = [ 
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
         'name', 
         'number', 
         'date', 
-        'color',
+        'color', 
         'next_super', 
         'ball1', 
         'ball2', 
         'ball3', 
         'ball4', 
         'ball5', 
-        'ball6'
+        'ball6', 
+        'ball7',
+        'special1',
+        'special2',
+        'total',
+        'count',
     ];
-
 }

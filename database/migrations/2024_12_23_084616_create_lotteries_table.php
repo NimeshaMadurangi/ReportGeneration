@@ -28,11 +28,13 @@ return new class extends Migration
             $table->string('ball6')->nullable(); // Ball 6
             $table->string('ball7')->nullable(); // Ball 7
             $table->date('next_date')->nullable();
+            $table->string('special1')->nullable(); // SP_50,000_NO value
+            $table->string('special2')->nullable(); // SP_40_NO value
+            $table->decimal('total', 15, 2)->nullable(); // Total prize value
+            $table->integer('count')->nullable();
             $table->timestamps();
         });
     }
-
-
 
     /**
      * Reverse the migrations.

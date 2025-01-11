@@ -9,6 +9,8 @@ const SuperballTamil = ({ name = "Superball" }) => {
     ball1: null,
     ball2: null,
     ball3: null,
+    ball4: null,
+    ball5: null,
     next_super: null,
   });
 
@@ -26,9 +28,19 @@ const SuperballTamil = ({ name = "Superball" }) => {
   }, [name]);
 
  
-  const balls = [lottery.ball1, lottery.ball2, lottery.ball3].filter(
+  const balls = [lottery.ball1, lottery.ball2, lottery.ball3, lottery.ball4, lottery.ball5].filter(
     (ball) => ball !== null
   );
+
+  const translateColor = (color) => {
+    if (color === "Green") {
+      return "பச்சை";
+    }
+    else if (color === "Red") {
+        return "சிவப்பு";
+    }
+    return color;
+  };
 
   return (
     <div className="superball-ticket-container">
@@ -44,17 +56,17 @@ const SuperballTamil = ({ name = "Superball" }) => {
           <div className="superball-ticket-draw-number-container">
             <div className="superball-ticket-draw-number">
               <div className="superball-ticket-draw-number-text">
-                Draw Number ▶ {lottery.number || "Loading..."}
+                வெற்றி வாரம் ▶ {lottery.number || "Loading..."}
               </div>
             </div>
             <div className="superball-ticket-color">
               <div className="superball-ticket-colour-text">
-                Colour ▶ {lottery.color || "Loading..."}
+                வர்ணம் ▶ {translateColor(lottery.color) || "Loading..."}
               </div>
             </div>
             <div className="superball-ticket-winning-numbers">
               <div className="superball-ticket-winning-numbers-title">
-                English Letter, Super Number & Winning Numbers
+                ---- வெற்றி எண்கள் ----
               </div>
               <div className="superball-ticket-winning-numbers-container">
                 {balls.length > 0
@@ -74,7 +86,7 @@ const SuperballTamil = ({ name = "Superball" }) => {
             <div className="superball-ticket-special">
               <div className="superball-ticket-bottom">
                 <div className="superball-ticket-next-jackpot">
-                  Next Super Jackpot : Rs. {lottery.next_super || "Loading..."}
+                  அடுத்த சுப்பர் ஐக்பொட் : ரூ. {lottery.next_super || "Loading..."}
                 </div>
               </div>
             </div>

@@ -13,6 +13,7 @@ const KaprukaSinhala = ({ name = "Kapruka" }) => {
     ball5: null,
     ball6: null,
     next_super: null,
+    special1: null,
   });
 
   useEffect(() => {
@@ -113,7 +114,7 @@ const KaprukaSinhala = ({ name = "Kapruka" }) => {
                   className="kapruka-ticket-special-prize-icon"
                 />
                 <div>
-                  රු. 50,000/- සඳහා <br /> විශේෂ අංකය
+                  රු. 50,000/- සඳහා <br /> විශේෂ අංකය : {lottery.special1 || "Loading..."}
                 </div>
               </div>
             </div>

@@ -13,6 +13,7 @@ const LagnaWasanaTamil = ({ name = "Lagna Wasanawa" }) => {
     ball4: null,
     ball5: null,
     next_super: null,
+    special1: null,
   });
 
   // Fetch lottery data on component mount
@@ -42,22 +43,25 @@ const LagnaWasanaTamil = ({ name = "Lagna Wasanawa" }) => {
     else if (color === "Red") {
         return "சிவப்பு";
     }
+    else if (color === "Brown") {
+      return "பழுப்பு";
+    }
     return color;
   };
 
   const ballImageMap = {
     CAPRICORN: "/images/lagnaimages/capricorn.png",
-    // AQUARIUS: "/images/lagnaimages/aquarius.png",
-    // PISCES: "/images/lagnaimages/pisces.png",
-    // ARIES: "/images/lagnaimages/aries.png",
-    // TAURUS: "/images/lagnaimages/taurus.png",
-    // GEMINI: "/images/lagnaimages/gemini.png",
-    // CANCER: "/images/lagnaimages/cancer.png",
-    // LEO: "/images/lagnaimages/leo.png",
-    // VIRGO: "/images/lagnaimages/virgo.png",
-    // LIBRA: "/images/lagnaimages/libra.png",
-    // SCORPIO: "/images/lagnaimages/scorpio.png",
-    // SAGITTARIUS: "/images/lagnaimages/sagittarius.png",
+    AQUARIUS: "/images/lagnaimages/aquarius.png",
+    PISCES: "/images/lagnaimages/pisces.png",
+    ARIES: "/images/lagnaimages/aries.png",
+    TAURUS: "/images/lagnaimages/taurus.png",
+    GEMINI: "/images/lagnaimages/gemini.png",
+    CANCER: "/images/lagnaimages/cancer.png",
+    LEO: "/images/lagnaimages/leo.png",
+    VIRGO: "/images/lagnaimages/virgo.png",
+    LIBRA: "/images/lagnaimages/libra.png",
+    SCORPIO: "/images/lagnaimages/scorpio.png",
+    SAGITTARIUS: "/images/lagnaimages/sagittarius.png",
   };
 
   return (
@@ -79,7 +83,7 @@ const LagnaWasanaTamil = ({ name = "Lagna Wasanawa" }) => {
             </div>
             <div className="lagna-ticket-color">
               <div className="lagna-ticket-colour-text">
-              வர்ணம் ▶ {translateColor(lottery.color) || "Loading..."}
+                வர்ணம் ▶ {translateColor(lottery.color) || "Loading..."}
               </div>
             </div>
             <div className="lagna-ticket-winning-numbers">
@@ -117,7 +121,7 @@ const LagnaWasanaTamil = ({ name = "Lagna Wasanawa" }) => {
                   className="lagna-ticket-special-prize-icon"
                 />
                 <div>
-                  ரூ 50,000/- பணம் பரிசுகான <br/> வீசேட இலக்கங்கள்
+                  ரூ 50,000/- பணம் பரிசுகான <br/> வீசேட இலக்கங்கள்: {lottery.special1 || "Loading..."}
                 </div>
               </div>
             </div>

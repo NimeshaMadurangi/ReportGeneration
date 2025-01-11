@@ -3,7 +3,6 @@ import axios from "axios";
 import "../../css/lagna.css";
 
 const LagnaWasanaEnglish = ({ name = "Lagna Wasanawa" }) => {
-
   const [lottery, setLottery] = useState({
     number: null,
     color: null,
@@ -13,6 +12,7 @@ const LagnaWasanaEnglish = ({ name = "Lagna Wasanawa" }) => {
     ball4: null,
     ball5: null,
     next_super: null,
+    special1: null,
   });
 
   // Fetch lottery data on component mount
@@ -36,17 +36,17 @@ const LagnaWasanaEnglish = ({ name = "Lagna Wasanawa" }) => {
 
   const ballImageMap = {
     CAPRICORN: "/images/lagnaimages/capricorn.png",
-    // AQUARIUS: "/images/lagnaimages/aquarius.png",
-    // PISCES: "/images/lagnaimages/pisces.png",
-    // ARIES: "/images/lagnaimages/aries.png",
-    // TAURUS: "/images/lagnaimages/taurus.png",
-    // GEMINI: "/images/lagnaimages/gemini.png",
-    // CANCER: "/images/lagnaimages/cancer.png",
-    // LEO: "/images/lagnaimages/leo.png",
-    // VIRGO: "/images/lagnaimages/virgo.png",
-    // LIBRA: "/images/lagnaimages/libra.png",
-    // SCORPIO: "/images/lagnaimages/scorpio.png",
-    // SAGITTARIUS: "/images/lagnaimages/sagittarius.png",
+    AQUARIUS: "/images/lagnaimages/aquarius.png",
+    PISCES: "/images/lagnaimages/pisces.png",
+    ARIES: "/images/lagnaimages/aries.png",
+    TAURUS: "/images/lagnaimages/taurus.png",
+    GEMINI: "/images/lagnaimages/gemini.png",
+    CANCER: "/images/lagnaimages/cancer.png",
+    LEO: "/images/lagnaimages/leo.png",
+    VIRGO: "/images/lagnaimages/virgo.png",
+    LIBRA: "/images/lagnaimages/libra.png",
+    SCORPIO: "/images/lagnaimages/scorpio.png",
+    SAGITTARIUS: "/images/lagnaimages/sagittarius.png",
   };
 
   return (
@@ -76,21 +76,23 @@ const LagnaWasanaEnglish = ({ name = "Lagna Wasanawa" }) => {
                 Winning Numbers
               </div>
               <div className="lagna-ticket-winning-numbers-container">
-                  {balls.length > 0
-                    ? balls.map((ball, index) => (
-                        <div key={index} className="lagna-ticket-winning-number">
-                          {index === 4 && ballImageMap[ball] ? ( 
-                            <img
-                              src={ballImageMap[ball]}
-                              alt={`Ball ${ball}`}
-                              className="lagna-ticket-ball-image"
-                            />
-                          ) : (
-                            <div className="lagna-ticket-winning-number-text">{ball}</div> 
-                          )}
-                        </div>
-                      ))
-                    : "Loading..."}
+                {balls.length > 0
+                  ? balls.map((ball, index) => (
+                      <div key={index} className="lagna-ticket-winning-number">
+                        {index === 4 && ballImageMap[ball] ? (
+                          <img
+                            src={ballImageMap[ball]}
+                            alt={`Ball ${ball}`}
+                            className="lagna-ticket-ball-image"
+                          />
+                        ) : (
+                          <div className="lagna-ticket-winning-number-text">
+                            {ball}
+                          </div>
+                        )}
+                      </div>
+                    ))
+                  : "Loading..."}
               </div>
             </div>
             <div className="lagna-ticket-special">
@@ -99,6 +101,7 @@ const LagnaWasanaEnglish = ({ name = "Lagna Wasanawa" }) => {
                   Next Super Jackpot : Rs. {lottery.next_super || "Loading..."}
                 </div>
               </div>
+              {/* Special Number */}
               <div className="lagna-ticket-special-prize-container">
                 <img
                   src="/images/sc.png"
@@ -106,7 +109,7 @@ const LagnaWasanaEnglish = ({ name = "Lagna Wasanawa" }) => {
                   className="lagna-ticket-special-prize-icon"
                 />
                 <div>
-                  Special number for <br /> Rs. 50,000/- cash prize
+                  Special number for <br /> Rs. 50,000/- cash prize:{lottery.special1 || "Loading..."}
                 </div>
               </div>
             </div>
