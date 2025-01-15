@@ -19,7 +19,7 @@
   /* Grid Styles */
   .section-container {
     display: grid;
-    gap: 0.3rem; /* Adjust spacing between grid items */
+    gap: 0.5rem; /* Adjust spacing between grid items */
     margin-top: 1rem;
   }
   

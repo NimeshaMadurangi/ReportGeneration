@@ -13,6 +13,7 @@ const LagnaWasanaEnglish = ({ name = "Lagna Wasanawa" }) => {
     ball5: null,
     next_super: null,
     special1: null,
+    special2: null,
   });
 
   // Fetch lottery data on component mount
@@ -61,45 +62,48 @@ const LagnaWasanaEnglish = ({ name = "Lagna Wasanawa" }) => {
             />
           </div>
           <div className="lagna-ticket-draw-number-container">
-            <div className="lagna-ticket-draw-number">
+           
               <div className="lagna-ticket-draw-number-text">
                 Draw Number ▶ {lottery.number || "Loading..."}
               </div>
-            </div>
-            <div className="lagna-ticket-color">
+           
+            
               <div className="lagna-ticket-colour-text">
                 Colour ▶ {lottery.color || "Loading..."}
               </div>
-            </div>
+           
             <div className="lagna-ticket-winning-numbers">
               <div className="lagna-ticket-winning-numbers-title">
                 Winning Numbers
               </div>
               <div className="lagna-ticket-winning-numbers-container">
-                {balls.length > 0
-                  ? balls.map((ball, index) => (
-                      <div key={index} className="lagna-ticket-winning-number">
-                        {index === 4 && ballImageMap[ball] ? (
+              {balls.length > 0
+                ? balls.map((ball, index) => (
+                    <div key={index} className="lagna-ticket-winning-number">
+                      {index === 4 && ballImageMap[ball] ? (
+                        <>
                           <img
                             src={ballImageMap[ball]}
                             alt={`Ball ${ball}`}
                             className="lagna-ticket-ball-image"
                           />
-                        ) : (
-                          <div className="lagna-ticket-winning-number-text">
-                            {ball}
-                          </div>
-                        )}
-                      </div>
-                    ))
-                  : "Loading..."}
-              </div>
+                          <div className="lagna-ticket-ball-name">{ball}</div>
+                        </>
+                      ) : (
+                        <div className="lagna-ticket-winning-number-text">
+                          {ball}
+                        </div>
+                      )}
+                    </div>
+                  ))
+                : "Loading..."}
+            </div>
             </div>
             <div className="lagna-ticket-special">
               <div className="lagna-ticket-bottom">
-                <div className="lagna-ticket-next-jackpot">
+                
                   Next Super Jackpot : Rs. {lottery.next_super || "Loading..."}
-                </div>
+                
               </div>
               {/* Special Number */}
               <div className="lagna-ticket-special-prize-container">
@@ -108,8 +112,9 @@ const LagnaWasanaEnglish = ({ name = "Lagna Wasanawa" }) => {
                   alt="Special Prize"
                   className="lagna-ticket-special-prize-icon"
                 />
-                <div>
-                  Special number for <br /> Rs. 50,000/- cash prize:{lottery.special1 || "Loading..."}
+                <div className="special-numbers">
+                  Special number for
+                  <br /> Rs. 50,000/- :{lottery.special1 || "Loading..."}      |    Rs. 40,000/- :{lottery.special2 || "Loading..."}
                 </div>
               </div>
             </div>

@@ -1,5 +1,7 @@
 import React, { useRef } from "react";
 import "../../css/report.css";
+import { jsPDF } from "jspdf";
+import html2canvas from "html2canvas";
 
 // Component Imports
 import LagnaWasanaEnglish from "../Components/LagnaWasanaEnglish";
@@ -30,13 +32,47 @@ import FooterSinhala from "@/Components/footerSinhala";
 import FooterEnglish from "@/Components/footerEnglish";
 import FooterTamil from "@/Components/footerTamil";
 
-
 const Report = () => {
+  const reportRef = useRef(null);
   const englishRef = useRef(null);
   const sinhalaRef = useRef(null);
   const tamilRef = useRef(null);
 
- 
+  const downloadPDF = async () => {
+    const pdf = new jsPDF('p', 'mm', 'a4');
+    const elements = [reportRef.current];
+    let verticalOffset = 0;
+
+    for (const element of elements) {
+      const canvas = await html2canvas(element, {
+        scale: 2,
+        useCORS: true,
+        logging: false,
+        allowTaint: true
+      });
+
+      const imgData = canvas.toDataURL('image/png');
+      const imgWidth = 210; // A4 width in mm
+      const pageHeight = 295; // A4 height in mm
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      let heightLeft = imgHeight;
+      let position = 0;
+
+      pdf.addImage(imgData, 'PNG', 0, position + verticalOffset, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+
+      while (heightLeft >= 0) {
+        position = heightLeft - imgHeight;
+        pdf.addPage();
+        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+      }
+
+      verticalOffset += 10; // Add space between sections
+    }
+
+    pdf.save('lottery-report.pdf');
+  };
 
   const renderSection = (ref, components) => (
     <div ref={ref} className="section-container">
@@ -50,11 +86,23 @@ const Report = () => {
 
   return (
     <div className="report-wrapper">
-      {/* <button onClick={downloadPDF} className="download-button">
+      <button 
+        onClick={downloadPDF} 
+        className="download-button"
+        style={{
+          padding: '10px 20px',
+          backgroundColor: '#4CAF50',
+          color: 'white',
+          border: 'none',
+          borderRadius: '4px',
+          cursor: 'pointer',
+          marginBottom: '20px'
+        }}
+      >
         Download as PDF
-      </button> */}
+      </button>
 
-      <div className="report-sections">
+      <div className="report-sections" ref={reportRef}>
         {/* English Section */}
         {renderSection(englishRef, [
           HeaderEnglish,
