@@ -64,7 +64,8 @@ const HeaderSinhala = () => {
         </div>
         <div className="date-container1">
           <div className="date-text1">
-            {currentDate || "Loading..."} නිල ප්‍රතිඵල
+            {currentDate || "Loading..."} 
+            <br /> නිල ප්‍රතිඵල
           </div>
         </div>
       </div>

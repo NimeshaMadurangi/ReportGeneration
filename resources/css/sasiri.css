@@ -1,7 +1,7 @@
 .sasiri-ticket-container {
-  width: 40rem;
+  width: 42rem;
   height: auto;
-  max-height: 10rem;
+  max-height: 11rem;
   margin: 0 auto;
   display: flex;
   background-color: rgba(20, 19, 20, 0.925);
@@ -24,8 +24,8 @@
   }
   
 .sasiri-ticket-logo {
-  height: 10rem;
-  width: 15rem;
+  height: 11rem;
+  width: 16rem;
 }
 
 /* Draw Number Section */

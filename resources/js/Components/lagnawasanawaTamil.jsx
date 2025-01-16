@@ -82,7 +82,7 @@ const LagnaWasanaTamil = ({ name = "Lagna Wasanawa" }) => {
               </div>
             </div>
             <div className="lagna-ticket-color">
-              <div className="lagna-ticket-colour-text">
+              <div className="lagna-ticket-colour-text1">
                 வர்ணம் ▶ {translateColor(lottery.color) || "Loading..."}
               </div>
             </div>

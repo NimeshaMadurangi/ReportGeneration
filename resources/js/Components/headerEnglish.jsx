@@ -21,6 +21,7 @@ const HeaderEnglish = () => {
 
   return (
     <div className="header-container">
+  
       <div className="image-container">
         <img
           src="/images/logo.png"
@@ -31,13 +32,15 @@ const HeaderEnglish = () => {
           DEVELOPMENT LOTTERIES BOARD
           <div className="header-text2">www.dlb.lk</div>
         </div>
+      
+
         <div className="date-container">
           <div className="date-text">
             OFFICIAL RESULTS 
             <div className="date-text-1">{currentDate || "Loading..."}</div>
           </div>
         </div>
-      </div>
+        </div>
     </div>
   );
 };

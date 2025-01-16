@@ -1,7 +1,7 @@
 .kapruka-ticket-container {
-    width: 40rem;
+    width: 42rem;
     height: auto;
-    max-height: 10rem;
+    max-height: 11rem;
     margin: 0 auto;
     display: flex;
     background-color: black;
@@ -24,8 +24,8 @@
     }
     
   .kapruka-ticket-logo {
-    height: 10rem;
-    width: 12rem;
+    height: 11rem;
+    width: 13rem;
   }
   
   /* Draw Number Section */

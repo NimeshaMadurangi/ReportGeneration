@@ -64,8 +64,11 @@ const LagnaWasanaEnglish = ({ name = "Lagna Wasanawa" }) => {
           <div className="lagna-ticket-draw-number-container">
            
               <div className="lagna-ticket-draw-number-text">
-                Draw Number ▶ {lottery.number || "Loading..."}
-              </div>
+                Draw Number
+                </div>
+                <div className="lagna-ticket-draw-number-text1">
+                  {lottery.number || "Loading..."}
+                </div>
            
             
               <div className="lagna-ticket-colour-text">
