@@ -10,14 +10,14 @@
 
 /* Winning Numbers Section */
 .lagna-ticket-winning-numbers {
-  text-align: center;
-  margin-bottom: 0.1cm;
+  justify-content: center;
 }
 
 .lagna-ticket-winning-numbers-title {
   color: white;
   font-size: 0.2cm;
   font-weight: 1000;
+  margin-left: 1cm;
   margin-bottom: 0.1cm;
   margin-top: 0.05cm;
 }
@@ -27,6 +27,7 @@
   justify-content: center;
   gap: 0.1cm;
   margin-bottom: 0.1cm;
+  margin-left: -1.8cm;
 }
 
 .lagna-ticket-winning-number {
@@ -44,7 +45,7 @@
 .lagna-ticket-winning-number-text {
   font-size: 0.18cm;
   font-weight: 1000;
-  padding: 0.1cm 0.1cm;
+  text-align: center;
 }
 
 /* Header Section */
@@ -70,7 +71,7 @@
   flex: 1;
   align-items: flex-start;
   margin-top: 0.1cm;
-  margin-left: 0.1cm;
+  margin-left: 0.4cm;
   margin-right: 0.1cm;
 }
 
@@ -88,7 +89,7 @@
   display: inline-block;
   color: #2d3748;
   font-weight: 1000;
-  font-size: 0.18cm;
+  font-size: 0.15cm;
   text-align: center;
 }
 
@@ -98,47 +99,31 @@
   display: inline-block;
   color: #2d3748;
   font-weight: 1000;
-  font-size: 0.18cm;
+  font-size: 0.15cm;
   text-align: center;
 }
 
 /* Color Section */
-.lagna-ticket-colour-container {
-  flex: 1;
-  margin: 0 0.1cm;
-  text-align: center;
-  margin-top: 0.1cm;
-}
-
-.lagna-ticket-color {
-  background-color: #f0f0f1;
-  border-radius: 0.1cm;
-  padding: 0.1cm 0.1cm;
-  display: inline-block;
-  margin-left: 0.1cm;
-}
 
 .lagna-ticket-colour-text {
-  background-color: #f0f0f1;
-  border-radius: 0.1cm;
+  background-color: #b4b4b4;
+  /* clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%, 0 100%); */
   padding: 0.1cm 0.1cm;
   display: inline-block;
-  margin-left: 0.5cm;
-  color:black;
+  color: #2d3748;
   font-weight: 1000;
-  font-size: 0.18cm;
+  font-size: 0.15cm;
   text-align: center;
+  margin-left: 1cm;
 }
 
-
 .lagna-ticket-colour-text1 {
-  background-color: #f0f0f1;
-  border-radius: 0.375rem;
-  padding: 0.3rem 0.3rem;
+  background-color: #eceef1;
+  padding: 0.1cm 0.1cm;
   display: inline-block;
-  color:black;
+  color: #2d3748;
   font-weight: 1000;
-  font-size: 0.75rem;
+  font-size: 0.15cm;
   text-align: center;
 }
 
@@ -150,14 +135,14 @@
   margin-left: -1cm;
   margin-right: 1cm;
   margin-bottom: 0.1cm;
-  width: 2.5cm;
+  width: 2.8cm;
   height: 0.4cm;
   background-color: #2d3748;
   padding: 0.1cm 0.1cm;
   border-radius: 0.1cm;
   display: flex;
   color: white;
-  font-size: 0.12cm;
+  font-size: 0.14cm;
 }
 
 /* Next Jackpot */
@@ -194,7 +179,7 @@
 .special-numbers {
   color: rgb(0, 0, 0);
   text-align: center;
-  font-size: 0.12cm;
+  font-size: 0.14cm;
   font-weight: 1000;
 }
 

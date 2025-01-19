@@ -70,10 +70,13 @@ const LagnaWasanaEnglish = ({ name = "Lagna Wasanawa" }) => {
                   {lottery.number || "Loading..."}
                 </div>
            
+                <div className="lagna-ticket-colour-text">
+                  Colour 
+                </div>
+                <div className="lagna-ticket-colour-text1">
+                  {lottery.color || "Loading..."}
+                </div>
             
-              <div className="lagna-ticket-colour-text">
-                Colour ▶ {lottery.color || "Loading..."}
-              </div>
            
             <div className="lagna-ticket-winning-numbers">
               <div className="lagna-ticket-winning-numbers-title">
