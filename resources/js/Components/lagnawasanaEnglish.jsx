@@ -116,8 +116,8 @@ const LagnaWasanaEnglish = ({ name = "Lagna Wasanawa" }) => {
                   className="lagna-ticket-special-prize-icon"
                 />
                 <div className="special-numbers">
-                  Special number for
-                  <br /> Rs. 50,000/- :{lottery.special1 || "Loading..."}      |    Rs. 40,000/- :{lottery.special2 || "Loading..."}
+                  Special number for Rs. 50,000/-
+                  {lottery.special1 || "Loading..."}      <br />     Rs. 40,000/- :{lottery.special2 || "Loading..."}
                 </div>
               </div>
             </div>
