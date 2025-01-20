@@ -43,16 +43,22 @@ const SasiriEnglish = ({ name = "Sasiri" }) => {
             />
           </div>
           <div className="sasiri-ticket-draw-number-container">
-            <div className="sasiri-ticket-draw-number">
-              <div className="sasiri-ticket-draw-number-text">
-                Draw Number ▶ {lottery.number || "Loading..."}
-              </div>
-            </div>
-            <div className="sasiri-ticket-color">
-              <div className="sasiri-ticket-colour-text">
-                Colour ▶ {lottery.color || "Loading..."}
-              </div>
-            </div>
+            
+            <div className="lagna-ticket-draw-number-text">
+                Draw Number
+                </div>
+                <div className="lagna-ticket-draw-number-text1">
+                  {lottery.number || "Loading..."}
+                </div>
+           
+                <div className="lagna-ticket-colour-text">
+                  Colour 
+                </div>
+                <div className="lagna-ticket-colour-text1">
+                  {lottery.color || "Loading..."}
+                </div>
+            
+
             <div className="sasiri-ticket-winning-numbers">
               <div className="sasiri-ticket-winning-numbers-title">
                 ----- Winning Numbers -----
@@ -79,9 +85,9 @@ const SasiriEnglish = ({ name = "Sasiri" }) => {
             </div>
             <div className="sasiri-ticket-special">
               <div className="sasiri-ticket-bottom">
-                <div className="sasiri-ticket-next-jackpot">
+                
                   Total Value of Prize : {lottery.total || "Loading..."}
-                </div>
+               
               </div>
             </div>
           </div>

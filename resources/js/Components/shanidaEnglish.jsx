@@ -44,16 +44,22 @@ const ShanidaEnglish = ({ name = "Shanida" }) => {
             />
           </div>
           <div className="shanida-ticket-draw-number-container">
-            <div className="shanida-ticket-draw-number">
+            
               <div className="shanida-ticket-draw-number-text">
-                Draw Number ▶ {lottery.number || "Loading..."}
+                Draw Number
               </div>
-            </div>
-            <div className="shanida-ticket-color">
+              <div className="shanida-ticket-draw-number-text1">
+                {lottery.number || "Loading..."}
+              </div>
+            
+            
               <div className="shanida-ticket-colour-text">
-                Colour ▶ {lottery.color || "Loading..."}
+                Colour
               </div>
-            </div>
+              <div className="shanida-ticket-colour-text1">
+                {lottery.color || "Loading..."}
+              </div>
+            
             <div className="shanida-ticket-winning-numbers">
               <div className="shanida-ticket-winning-numbers-title">
                 ---- Winning Numbers ----
@@ -74,22 +80,22 @@ const ShanidaEnglish = ({ name = "Shanida" }) => {
               </div>
             </div>
             <div className="shanida-ticket-special">
-              <div className="shanida-ticket-bottom">
-                <div className="shanida-ticket-next-jackpot">
+                <div className="shanida-ticket-bottom">
                   Next Super Jackpot : Rs. {lottery.next_super || "Loading..."}
                 </div>
+                {lottery.special1 && (
+                  <div className="shanida-ticket-special-prize-container">
+                    <img
+                      src="/images/sc.png"
+                      alt="Special Prize"
+                      className="shanida-ticket-special-prize-icon"
+                    />
+                    <div className="special-numbers">
+                      Special number for Rs. 50,000/- cash prize : {lottery.special1}
+                    </div>
+                  </div>
+                )}
               </div>
-              <div className="shanida-ticket-special-prize-container">
-                <img
-                  src="/images/sc.png"
-                  alt="Special Prize"
-                  className="shanida-ticket-special-prize-icon"
-                />
-                <div>
-                  Special number for <br /> Rs. 50,000/- cash prize
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

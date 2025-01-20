@@ -46,16 +46,22 @@ const SupiridanaEnglish = ({ name = "Supiri Dhana Sampatha" }) => {
             />
           </div>
           <div className="supiridana-ticket-draw-number-container">
-            <div className="supiridana-ticket-draw-number">
+           
               <div className="supiridana-ticket-draw-number-text">
-                Draw Number ▶ {lottery.number || "Loading..."}
+                Draw Number
               </div>
-            </div>
-            <div className="supiridana-ticket-color">
+              <div className="supiridana-ticket-draw-number-text1">
+                {lottery.number || "Loading..."}
+              </div>
+            
+            
               <div className="supiridana-ticket-colour-text">
-                Colour ▶ {lottery.color || "Loading..."}
+                Colour
               </div>
-            </div>
+              <div className="supiridana-ticket-colour-text1">
+                {lottery.color || "Loading..."}
+              </div>
+            
             <div className="supiridana-ticket-winning-numbers">
               <div className="supiridana-ticket-winning-numbers-title">
                 English Letter, Super Number & Winning Numbers

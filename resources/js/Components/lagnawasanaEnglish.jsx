@@ -106,12 +106,11 @@ const LagnaWasanaEnglish = ({ name = "Lagna Wasanawa" }) => {
             </div>
             </div>
             <div className="lagna-ticket-special">
-              <div className="lagna-ticket-bottom">
-                
-                  Next Super Jackpot : Rs. {lottery.next_super || "Loading..."}
-                
-              </div>
-              {/* Special Number */}
+            <div className="lagna-ticket-bottom">
+              Next Super Jackpot : Rs. {lottery.next_super || "Loading..."}
+            </div>
+            {/* Special Numbers Section */}
+            {(lottery.special1 || lottery.special2) && (
               <div className="lagna-ticket-special-prize-container">
                 <img
                   src="/images/sc.png"
@@ -119,11 +118,17 @@ const LagnaWasanaEnglish = ({ name = "Lagna Wasanawa" }) => {
                   className="lagna-ticket-special-prize-icon"
                 />
                 <div className="special-numbers">
-                  Special number for Rs. 50,000/-
-                  {lottery.special1 || "Loading..."}      <br />     Rs. 40,000/- :{lottery.special2 || "Loading..."}
+                  {lottery.special1 && (
+                    <>
+                      Special number for Rs. 50,000/-: {lottery.special1}
+                      <br />
+                    </>
+                  )}
+                  {lottery.special2 && <>Rs. 40,000/-: {lottery.special2}</>}
                 </div>
               </div>
-            </div>
+            )}
+          </div>
           </div>
         </div>
       </div>

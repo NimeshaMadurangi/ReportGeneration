@@ -44,16 +44,22 @@ const SuperballEnglish = ({ name = "Superball" }) => {
             />
           </div>
           <div className="superball-ticket-draw-number-container">
-            <div className="superball-ticket-draw-number">
+            
               <div className="superball-ticket-draw-number-text">
-                Draw Number ▶ {lottery.number || "Loading..."}
+                Draw Number
+              </div> 
+              <div className="superball-ticket-draw-number-text1">
+                {lottery.number || "Loading..."}
               </div>
-            </div>
-            <div className="superball-ticket-color">
+
+          
               <div className="superball-ticket-colour-text">
-                Colour ▶ {lottery.color || "Loading..."}
+                Colour
               </div>
-            </div>
+              <div className="superball-ticket-colour-text1">
+                {lottery.color || "Loading..."}
+              </div>
+            
             <div className="superball-ticket-winning-numbers">
               <div className="superball-ticket-winning-numbers-title">
                 ---- Winning Numbers ----
@@ -74,12 +80,28 @@ const SuperballEnglish = ({ name = "Superball" }) => {
               </div>
             </div>
             <div className="superball-ticket-special">
-              <div className="superball-ticket-bottom">
-                <div className="superball-ticket-next-jackpot">
+                <div className="superball-ticket-bottom">
                   Next Super Jackpot : Rs. {lottery.next_super || "Loading..."}
                 </div>
+                {lottery.special1 && (
+                  <div className="superball-ticket-special-prize-container">
+                    <img
+                      src="/images/sc.png"
+                      alt="Special Prize"
+                      className="superball-ticket-special-prize-icon"
+                    />
+                    <div className="special-numbers">
+                      {lottery.special1 && (
+                        <>
+                          Special number for Rs. 50,000/-: {lottery.special1}
+                          <br />
+                        </>
+                      )}
+                      {lottery.special2 && <>Rs. 40,000/-: {lottery.special2}</>}
+                    </div>
+                  </div>
+                )}
               </div>
-            </div>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 .sasiri-ticket-container {
-  width: 42rem;
+  width: 9.5cm;
   height: auto;
-  max-height: 11rem;
+  max-height: 2cm;
   margin: 0 auto;
   display: flex;
   background-color: rgba(20, 19, 20, 0.925);
@@ -11,10 +11,6 @@
   /* Header Section */
 .sasiri-ticket-header {
   display: flex;
-  align-items: center; /* Vertically align logo */
-  justify-content: center; /* Center the content in the header */
-  width: 100%; /* Ensure header takes full width */
-  margin-bottom: 0.5rem;
 }
   
   /* Logo Section */
@@ -24,113 +20,126 @@
   }
   
 .sasiri-ticket-logo {
-  height: 11rem;
-  width: 16rem;
+  height: 2cm;
+  width: 2.5cm;
 }
 
 /* Draw Number Section */
 .sasiri-ticket-draw-number-container {
   flex: 1;
   align-items: flex-start;
-  margin-top: 0.5rem;
-  margin-left: 3rem;
-  margin-right: 3rem;
+  margin-top: 0.1cm;
+  margin-left: 1.5cm;
+  margin-right: 0.1cm;
 }
   
 .sasiri-ticket-draw-number {
   background-color: #eceef1;
-  border-radius: 0.375rem;
-  padding: 0.3rem 0.3rem;
+  border-radius: 0.1cm;
+  padding: 0.1cm 0.1cm;
   display: inline-block;
 }
   
 .sasiri-ticket-draw-number-text {
+  background-color: #b4b4b4;
+  /* clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%, 0 100%); */
+  padding: 0.1cm 0.1cm;
+  display: inline-block;
   color: #2d3748;
   font-weight: 1000;
-  font-size: 0.6rem;
-}
-
-/* Color Section */
-.sasiri-ticket-colour-container {
-  flex: 1;
-  margin: 0 0.5rem;
+  font-size: 0.15cm;
   text-align: center;
 }
 
-.sasiri-ticket-color {
-  background-color: #f0f0f1;
-  border-radius: 0.375rem;
-  padding: 0.3rem 0.3rem;
+.sasiri-ticket-draw-number-text1 {
+  background-color: #eceef1;
+  padding: 0.1cm 0.1cm;
   display: inline-block;
-  margin-left: 3rem;
+  color: #2d3748;
+  font-weight: 1000;
+  font-size: 0.15cm;
+  text-align: center;
 }
 
+/* Color Section */
+
+
 .sasiri-ticket-colour-text {
-  color:black;
+  background-color: #b4b4b4;
+  /* clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%, 0 100%); */
+  padding: 0.1cm 0.1cm;
+  display: inline-block;
+  color: #2d3748;
   font-weight: 1000;
-  font-size: 0.6rem;
+  font-size: 0.15cm;
+  text-align: center;
+  margin-left: 1cm;
 }
+
+.sasiri-ticket-colour-text1 {
+  background-color: #eceef1;
+  padding: 0.1cm 0.1cm;
+  display: inline-block;
+  color: #2d3748;
+  font-weight: 1000;
+  font-size: 0.15cm;
+  text-align: center;
+}
+
 
 /* Winning Numbers Section */
 .sasiri-ticket-winning-numbers {
   justify-content: center;
-  margin-bottom: 0.3rem;
 }
 
 .sasiri-ticket-winning-numbers-title {
   color: white;
-  font-size: 1rem;
+  font-size: 0.2cm;
   font-weight: 1000;
-  margin-left: 1rem;
-  margin-bottom: 0.5rem;
-  margin-top: 0.5rem;
+  margin-left: -0.28cm;
+  margin-bottom: 0.05cm;
+  margin-top: 0.05cm;
 }
 
 .sasiri-ticket-winning-numbers-container {
   display: flex;
-  justify-content: flex-start;
-  margin-left: 3rem;
-  gap: 1rem;
+  justify-content: center;
+  gap: 0.3cm;
+  margin-bottom: 0.1cm;
+  margin-left: 0.1cm;
 }
 
 .sasiri-ticket-winning-number {
-  width: 2.2rem;
-  height: 2.2rem;
+  width: 0.4cm;
+  height: 0.4cm;
   background-color: #ffffff;
-  border-radius: 50%;
+  border-radius: 0.1cm;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .sasiri-ticket-winning-number-text {
-  font-size: 1rem; /* Adjust font size to fit within the circle */
-  font-weight: 700; /* Adjusted weight for better visibility */
-  padding: 0.4rem 0.5rem; /* Reduced padding for better text positioning */
-  text-align: center; /* Ensure text is centered */
-  line-height: 2.2rem; /* Vertically align the text in the circle */
-  border-radius: 50%; /* Make the container a perfect circle */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 2.2rem; /* Set height to match the circle size */
-  width: 2.2rem; /* Set width to match the circle size */
+  font-size: 0.18cm;
+  font-weight: 1000;
+  text-align: center;
 }
 
 
 .sasiri-ticket-winner-container {
   display: flex;
   align-items: center;
-  margin-right: -2rem;
-  width: 10rem;
+  margin-left: 0.8cm;
+  margin-top: -0.2cm;
+  width: 2cm;
   background-color: #ffffff;
-  padding: 0.5rem 0.5rem;
-  border-radius: 0.375rem;
+  padding: 0.1cm 0.1cm;
+  border-radius: 0.1cm;
 }
 
 /* Next Jackpot */
 .sasiri-ticket-winner {
   display: flex;
   color: rgb(0, 0, 0);
-  font-size: 0.575rem;
+  font-size: 0.14cm;
   font-weight: 1000;
 }
 
@@ -138,17 +147,16 @@
 /* Bottom Section */
 .sasiri-ticket-bottom {
   display: flex;
-  align-items: center;
-  margin-right: -15rem;
-  width: 15rem;
+  align-items: flex-start;
+  margin-left: -1cm;
+  margin-right: 1cm;
+  margin-bottom: 0.05cm;
+  width: 2.8cm;
+  height: 0.4cm;
   background-color: #2d3748;
-  padding: 0.5rem 0.5rem;
-  border-radius: 0.375rem;
-}
-
-/* Next Jackpot */
-.sasiri-ticket-next-jackpot {
+  padding: 0.1cm 0.1cm;
+  border-radius: 0.1cm;
   display: flex;
   color: white;
-  font-size: 0.575rem;
+  font-size: 0.14cm;
 }

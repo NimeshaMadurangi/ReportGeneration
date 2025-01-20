@@ -44,16 +44,22 @@ const AdakotipathiEnglish = ({ name = "Ada kotipathi" }) => {
             />
           </div>
           <div className="adakotipathi-ticket-draw-number-container">
-            <div className="adakotipathi-ticket-draw-number">
+            
               <div className="adakotipathi-ticket-draw-number-text">
-                Draw Number ▶ {lottery.number || "Loading..."}
+                Draw Number
               </div>
-            </div>
-            <div className="adakotipathi-ticket-color">
+              <div className="adakotipathi-ticket-draw-number-text1">
+                {lottery.number || "Loading..."}
+              </div>
+            
+            
               <div className="adakotipathi-ticket-colour-text">
-                Colour ▶ {lottery.color || "Loading..."}
+                Colour
               </div>
-            </div>
+              <div className="adakotipathi-ticket-colour-text1">
+                {lottery.color || "Loading..."}
+              </div>
+            
             <div className="adakotipathi-ticket-winning-numbers">
               <div className="adakotipathi-ticket-winning-numbers-title">
                 ---- Winning Numbers ----

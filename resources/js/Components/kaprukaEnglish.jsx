@@ -46,16 +46,22 @@ const KaprukaEnglish = ({ name = "Kapruka" }) => {
             />
           </div>
           <div className="kapruka-ticket-draw-number-container">
-            <div className="kapruka-ticket-draw-number">
+            
               <div className="kapruka-ticket-draw-number-text">
-                Draw Number ▶ {lottery.number || "Loading..."}
+                Draw Number 
               </div>
-            </div>
-            <div className="kapruka-ticket-color">
+              <div className="kapruka-ticket-draw-number-text1">
+                {lottery.number || "Loading..."}
+              </div>
+            
+            
               <div className="kapruka-ticket-colour-text">
-                Colour ▶ {lottery.color || "Loading..."}
+                Colour
               </div>
-            </div>
+              <div className="kapruka-ticket-colour-text1">
+                {lottery.color || "Loading..."}
+              </div>
+            
             <div className="kapruka-ticket-winning-numbers">
               <div className="kapruka-ticket-winning-numbers-title">
                 English Letter, Super Number & Winning Numbers
@@ -76,23 +82,26 @@ const KaprukaEnglish = ({ name = "Kapruka" }) => {
                   : "Loading..."}
               </div>
             
-            <div className="kapruka-ticket-special">
-              <div className="kapruka-ticket-bottom">
-                <div className="kapruka-ticket-next-jackpot">
+              <div className="kapruka-ticket-special">
+                <div className="kapruka-ticket-bottom">
                   Next Super Jackpot : Rs. {lottery.next_super || "Loading..."}
                 </div>
+                {lottery.special1 && (
+                  <div className="kapruka-ticket-special-prize-container">
+                    <img
+                      src="/images/sc.png"
+                      alt="Special Prize"
+                      className="kapruka-ticket-special-prize-icon"
+                    />
+                    <div className="special-numbers">
+                      Special number for Rs. 50,000/- cash prize :
+                      <br />
+                      {lottery.special1}
+                    </div>
+                  </div>
+                )}
               </div>
-              <div className="kapruka-ticket-special-prize-container">
-                <img
-                  src="/images/sc.png"
-                  alt="Special Prize"
-                  className="kapruka-ticket-special-prize-icon"
-                />
-                <div>
-                  Special number for <br /> Rs. 50,000/- cash prize : {lottery.special1 || "Loading..."}
-                </div>
-              </div>
-            </div>
+
           </div>
         </div>
       </div>
